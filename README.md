@@ -205,11 +205,4 @@ Each completed live trial produced metrics and supporting logs/CSVs. **These pat
 
 The revised manuscript contains the background, experimental design, results, discussion, limitations, and references. Add the reviewed PDF to the repository only after checking that it contains the intended final title and author details. If you commit it, link its actual repository-relative path here rather than an unverified filename.
 
-## 9. Authors and repository
 
-- **Jim Mathew K** 
-- **Vignesh Ekambaram** 
-- **Institution:** School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, India
-- **Repository:** https://github.com/jimmathewk21/MarsVanet
-
-This is an academic research and emulation project. Use it only in networks and virtual environments where you are authorized to run traffic-generation and security experiments.
