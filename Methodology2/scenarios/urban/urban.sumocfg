@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build urban.net.xml first (see build_networks.sh), then run with:
+       sumo    -c scenarios/urban/urban.sumocfg          (headless)
+       sumo-gui -c scenarios/urban/urban.sumocfg          (with GUI)
+     or drive it from collect_mobility.py via TraCI to record a trace. -->
+<configuration>
+    <input>
+        <net-file value="urban.net.xml"/>
+        <route-files value="urban.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="200"/>
+        <step-length value="1.0"/>
+    </time>
+</configuration>

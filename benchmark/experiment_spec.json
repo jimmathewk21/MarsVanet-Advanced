@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "title": "MarsVanet reproducible cross-methodology benchmark, Phase 2",
+  "candidate_common_topology": {
+    "id": "common_2ap_candidate_v1",
+    "source_reference": "Methodology3/sdn_vanet_2ap.py",
+    "ap_dpids": {"ap1": "0x1000000000000001", "ap2": "0x1000000000000002"},
+    "backbone_dpid": "0x0000000000000001",
+    "requested_links": [
+      {"ap": "ap1", "ap_port": 2, "backbone_port": 1},
+      {"ap": "ap2", "ap_port": 2, "backbone_port": 2}
+    ],
+    "expected_ap2_ports": {"radio_ingress": 1, "backbone_egress": 2},
+    "rf": {"model": "logDistance", "exponent": 3, "channels": {"ap1": "1", "ap2": "6"}, "client_isolation": {"ap1": false, "ap2": true}, "mobility": false},
+    "fixed_associations": {"sta1": "ap1", "sta2": "ap1", "sta3": "ap2"},
+    "station_ips": {"sta1": "10.0.0.1", "sta2": "10.0.0.2", "sta3": "10.0.0.3"},
+    "roles": {"sta1": "legitimate sender / M3 identity sta1", "sta2": "victim and receiver", "sta3": "attack sender / M3 identity sta3"},
+    "status": "adapter implemented; runtime DPIDs/ofports/associations unverified"
+  },
+  "configurations": {
+    "no_defense": {"controller": "ryu.app.simple_switch_13", "status": "runtime_unverified", "reason": "Ryu built-in learning switch; live forwarding remains unverified."},
+    "methodology1": {"controller": "Methodology1/scripts/dos_defense_static.py", "behavior": "Priority-100 drop for any IPv4 UDP from 10.0.0.3 on each connected switch; otherwise table-miss PacketIn L2 learning."},
+    "methodology2": {"controller": "Methodology2/scripts/dos_defense_v2.py", "behavior": "Rate-based Stage 1 meter then Stage 2 drop for UDP toward 10.0.0.2 on configured AP2 ingress; default AP2 DPID 0x1000000000000002, in_port=1, out_port=2; ports require live confirmation."},
+    "methodology3": {"controller": "Methodology3/controller.py", "behavior": "Consumes unfragmented, structurally valid UDP/5005, verifies source/vehicle identity, scores physical consistency and enforces per-vehicle reputation; not a generic volumetric flood detector."}
+  },
+  "workloads": {
+    "volumetric_udp": {
+      "family": "legitimate UDP plus volumetric UDP flooding",
+      "legitimate": {"source": "sta1", "destination": "sta2", "pps": 20},
+      "attack": {"source": "sta3", "destination": "sta2", "pps": 500},
+      "destination_port": 5001,
+      "payload_bytes": 256,
+      "phase_schedule": "sta1 sends legitimate traffic in all three windows; sta3 attack traffic is off during baseline and recovery and on only during attack",
+      "methodology3_applicability": "not_applicable_for_flood_detection"
+    },
+    "safety_consistency": {
+      "family": "Methodology 3 safety-message consistency and reputation recovery with a concurrent data-plane probe",
+      "safety_telemetry": {"source": "sta3", "destination": "sta2", "port": 5005, "payload": "compact JSON vehicle_id,timestamp,x,y,speed", "baseline": "150 valid messages at 5/s", "attack": "five severe impossible-displacement messages at 5/s", "recovery": "200 checker-valid messages at 5/s; Methodology 3's actual checker/reputation classes validate the trajectory and expected score/action trace"},
+      "data_plane_probe": {"legitimate": {"source": "sta1", "destination": "sta2", "port": 5001, "pps": 20}, "attack": {"source": "sta3", "destination": "sta2", "port": 5001, "pps": 500, "phase_schedule": "starts at attack start and continues through transient attack, severe-throttle measurement, reputation recovery, normal-state confirmation, and post-recovery normal measurement"}, "payload_bytes": 256},
+      "phase_schedule_seconds": {"baseline": 30, "transient_attack": 2, "severe_transition_wait_max": 10, "severe_throttle_measurement_default": 10, "recovery": 42, "normal_state_confirmation_wait_max": 5, "post_recovery_normal_measurement_default": 10},
+      "measurement_intervals": {"severe_throttle": "Starts only after the expected baseline plus five-violation controller decision prefix and AP2 100-kbps meter operation are observed/acknowledged; configurable via --severe-measurement-seconds (0,60].", "post_recovery_normal": "Starts only after the complete expected 355-decision trace ends at reputation >=0.80/action NORMAL and AP2 REMOVE is acknowledged; configurable via --normal-measurement-seconds (0,60]. Unavailable if not confirmed before timeout."},
+      "metrics": {"probe_throughput": "Attack payload bytes received by sta2 during the receiver-timestamp half-open interval, multiplied by 8 and divided by interval duration and 1e6.", "probe_delivery_loss": "For attack packets sent in the interval, join sender sequence numbers to receiver records across the entire trial to include boundary-late deliveries; PDR=delivered/sent and loss=1-PDR."},
+      "interpretation": "Only Methodology 3 is live-supported for safety_consistency. Sender records, controller decisions, OpenFlow barrier acknowledgements, and receiver traffic are independent evidence streams. A barrier confirms an operation was processed, not packet-level enforcement. Decisions are ordered against the expected trace because controller logs do not include telemetry sequence IDs. Recovery time is null when legitimate traffic was not impaired; reputation recovery and post-recovery data-plane measurements are reported separately."
+    }
+  },
+  "windows_seconds": {"pre_attack_baseline": 30, "attack": 60, "post_attack_recovery": 30},
+  "reproducibility": {"default_root_seed": 1, "default_independent_repetitions": 3, "seed_scope": "same workload/repetition seed across defense configurations for paired offered load; distinct workload/repetition seeds"},
+  "statistics": {"confidence": 0.95, "interval": "two-sided Student t interval across independent repetitions; null interval if fewer than two observed values"},
+  "metrics": {
+    "legitimate_throughput_mbps": "Successfully received legitimate application payload bits / attack-window seconds / 1e6.",
+    "packet_loss_ratio": "1 - received legitimate sequence numbers / sent legitimate sequence numbers.",
+    "packet_delivery_ratio": "received legitimate sequence numbers / sent legitimate sequence numbers.",
+    "latency_ms": "Median receiver arrival minus sender timestamp; record clock synchronization method and uncertainty.",
+    "attack_throughput_mbps": "Successfully received attack payload bits / attack-window seconds / 1e6.",
+    "detection_delay_seconds": "First controller detection evidence minus attack start; null when unobservable.",
+    "mitigation_delay_seconds": "First confirmed enforcement minus attack start; null without controller/switch confirmation.",
+    "recovery_time_seconds": "After attack end, time until legitimate throughput stays within 5 percent of pre-attack baseline for five consecutive seconds.",
+    "false_positive_count": "Legitimate sources/vehicles incorrectly flagged or restricted during baseline and attack windows."
+  },
+  "phase_2_status": "single-trial volumetric UDP plus Methodology 3 safety-consistency live adapters; not live-validated in this environment"
+}

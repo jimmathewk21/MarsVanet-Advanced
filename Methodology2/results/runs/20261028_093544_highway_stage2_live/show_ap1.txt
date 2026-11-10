@@ -1,0 +1,20 @@
+# 2026-10-28T09:35:44+05:30
+# ovs-ofctl -O OpenFlow13 show ap1
+OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:1000000000000001
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS
+OFPST_PORT_DESC reply (OF1.3) (xid=0x3):
+ 1(ap1-eth1): addr:fe:c6:07:0e:c9:04
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(ap1-wlan1): addr:02:00:00:00:03:00
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+ LOCAL(ap1): addr:06:13:a8:78:44:46
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0

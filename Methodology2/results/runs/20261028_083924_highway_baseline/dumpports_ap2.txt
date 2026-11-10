@@ -1,0 +1,12 @@
+# 2026-10-28T08:39:24+05:30
+# ovs-ofctl -O OpenFlow13 dump-ports ap2
+OFPST_PORT reply (OF1.3) (xid=0x2): 3 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+           duration=315.690s
+  port  1: rx pkts=31, bytes=2582, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=76, bytes=8272, drop=0, errs=0, coll=0
+           duration=315.732s
+  port  2: rx pkts=63, bytes=6448, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=62, bytes=5999, drop=0, errs=0, coll=0
+           duration=315.728s

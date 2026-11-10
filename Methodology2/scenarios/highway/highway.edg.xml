@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Three-lane highway, 33.33 m/s (120 km/h) free-flow. -->
+<edges>
+    <edge id="h_road" from="h0" to="h1" priority="1" numLanes="3" speed="33.33"/>
+</edges>

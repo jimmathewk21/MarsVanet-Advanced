@@ -1,0 +1,68 @@
+Project: DoS Attack Analysis in SDN-Based VANETs: Mobility-Aware Trust-Based Progressive Mitigation
+Date: 17 October 2026
+Time: 3:55 PM IST
+
+Defense evidence:
+1. UDP attack traffic from 10.0.0.3 to 10.0.0.2 was detected.
+2. AP2 installed a priority-100 UDP drop rule with a 30-second hard timeout.
+3. Ryu logs confirmed repeated block-refresh messages.
+4. Legitimate connectivity remained available during mitigation.
+5. sta1 ping to 10.0.0.2: 5 packets transmitted, 5 received, 0% packet loss.
+6. Average ping latency during the check: 0.559 ms.
+7. Drop-rule counter at the recorded check: 2127 packets, 3216024 bytes.
+
+Note: These are observed test results. A time-matched baseline comparison is still required.
+
+CURRENT STAGED-DEFENSE VERIFICATION
+Date: 17 October 2026
+
+Attack flow:
+Source: 10.0.0.3
+Destination: 10.0.0.2
+Protocol: UDP
+
+AP2 OpenFlow drop rule:
+Priority: 100
+Action: DROP
+Hard timeout: 30 seconds
+Drop counter observed: 2127 packets
+Bytes observed: 3216024
+
+Controller:
+Ryu process remained running.
+Repeated temporary-block refresh messages were observed.
+
+Legitimate connectivity:
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+ICMP packets transmitted: 5
+ICMP packets received: 5
+Packet loss: 0%
+Average RTT: 0.559 ms
+
+Limitations:
+The drop counter is cumulative and did not increase between the two latest observations.
+A time-matched baseline comparison and verification of fresh attack traffic during the refreshed block are still required.
+
+FRESH ATTACK VERIFICATION — 17 October 2026
+Attack: UDP from sta3 (10.0.0.3) to sta2 (10.0.0.2)
+Test duration: 5 seconds
+Configured sending rate: 2 Mbps
+Datagrams sent by iperf: 896
+Drop-rule packet counter before test: 2127
+Drop-rule packet counter after test: 3222
+Increase in drop-rule counter: 1095 packets
+Drop-rule byte counter after test: 4871664
+AP2 rule: priority 100, UDP, source 10.0.0.3, destination 10.0.0.2, action DROP
+Conclusion: The drop-rule counter increased during fresh attack traffic, confirming that the matching UDP packets were dropped by AP2.
+
+LEGITIMATE TRAFFIC VERIFICATION — 17 October 2026
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Protocol: ICMP
+Packets transmitted: 5
+Packets received: 5
+Packet loss: 0%
+Average RTT: 0.386 ms
+Maximum RTT: 0.727 ms
+Conclusion: Legitimate ICMP connectivity remained available while the UDP drop rule was active.

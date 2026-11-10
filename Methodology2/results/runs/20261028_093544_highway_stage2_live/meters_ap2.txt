@@ -1,0 +1,5 @@
+# 2026-10-28T09:35:45+05:30
+# ovs-ofctl -O OpenFlow13 dump-meters ap2
+OFPST_METER_CONFIG reply (OF1.3) (xid=0x2):
+meter=103 kbps bands=
+type=drop rate=500

@@ -1,0 +1,5 @@
+key_bits,observers,encryption_ms,aggregation_ms,decryption_ms,total_penalty,correctness
+256,1,1.915,0.004,1.182,10,PASS
+256,3,3.785,0.02,1.365,30,PASS
+256,5,6.517,0.01,0.931,50,PASS
+256,10,8.132,0.019,1.274,100,PASS

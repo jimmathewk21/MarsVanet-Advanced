@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-10-28 01:16:32 by Eclipse SUMO netconvert Version 1.12.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="/home/ev/MarsVanet-main_MED2%20(1)/MarsVanet-main/Methodology2/scenarios/urban/urban.nod.xml"/>
+        <edge-files value="/home/ev/MarsVanet-main_MED2%20(1)/MarsVanet-main/Methodology2/scenarios/urban/urban.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/ev/MarsVanet-main_MED2%20(1)/MarsVanet-main/Methodology2/scenarios/urban/urban.net.xml"/>
+    </output>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,1000.00,0.00" origBoundary="0.00,0.00,1000.00,0.00" projParameter="!"/>
+
+    <edge id=":u1_0" function="internal">
+        <lane id=":u1_0_0" index="0" speed="13.89" length="0.10" shape="500.00,-1.60 500.00,-1.60"/>
+    </edge>
+
+    <edge id="u_seg1" from="u0" to="u1" priority="1">
+        <lane id="u_seg1_0" index="0" speed="13.89" length="500.00" shape="0.00,-1.60 500.00,-1.60"/>
+    </edge>
+    <edge id="u_seg2" from="u1" to="u2" priority="1">
+        <lane id="u_seg2_0" index="0" speed="13.89" length="500.00" shape="500.00,-1.60 1000.00,-1.60"/>
+    </edge>
+
+    <tlLogic id="u1" type="static" programID="0" offset="0">
+        <phase duration="82" state="G"/>
+        <phase duration="3"  state="y"/>
+        <phase duration="5"  state="r"/>
+    </tlLogic>
+
+    <junction id="u0" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-3.20"/>
+    <junction id="u1" type="traffic_light" x="500.00" y="0.00" incLanes="u_seg1_0" intLanes=":u1_0_0" shape="500.00,0.00 500.00,-3.20 500.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="u2" type="dead_end" x="1000.00" y="0.00" incLanes="u_seg2_0" intLanes="" shape="1000.00,-3.20 1000.00,0.00"/>
+
+    <connection from="u_seg1" to="u_seg2" fromLane="0" toLane="0" via=":u1_0_0" tl="u1" linkIndex="0" dir="s" state="O"/>
+
+    <connection from=":u1_0" to="u_seg2" fromLane="0" toLane="0" dir="s" state="M"/>
+
+</net>

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+sumo/*.net.xml
+sumo/*.rou.xml
+sumo/*.nod.xml
+sumo/*.edg.xml
+sumo/*.sumocfg
+*.log
+controller_settings.json
+controller_settings.json.tmp

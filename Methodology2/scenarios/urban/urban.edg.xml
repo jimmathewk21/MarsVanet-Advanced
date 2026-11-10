@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Single-lane arterial, 13.89 m/s (50 km/h) free-flow, two segments meeting
+     at the signalised junction u1. -->
+<edges>
+    <edge id="u_seg1" from="u0" to="u1" priority="1" numLanes="1" speed="13.89"/>
+    <edge id="u_seg2" from="u1" to="u2" priority="1" numLanes="1" speed="13.89"/>
+</edges>

@@ -1,0 +1,8 @@
+metric,value
+key_size_bits,256
+iterations,20
+key_generation_ms,0.732
+average_encryption_ms,0.342
+average_decryption_ms,0.333
+average_homomorphic_addition_ms,0.001
+correctness,PASS

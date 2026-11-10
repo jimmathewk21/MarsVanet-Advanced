@@ -1,0 +1,7 @@
+# 2026-10-28T08:39:24+05:30
+# ovs-ofctl -O OpenFlow13 dump-flows ap2
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+ cookie=0x0, duration=315.574s, table=0, n_packets=0, n_bytes=0, priority=50,udp,in_port=1,nw_dst=10.0.0.2 actions=CONTROLLER:65509
+ cookie=0x0, duration=209.491s, table=0, n_packets=4, n_bytes=336, priority=1,in_port=2,dl_src=02:00:00:00:01:00,dl_dst=02:00:00:00:02:00 actions=output:1
+ cookie=0x0, duration=209.483s, table=0, n_packets=3, n_bytes=238, priority=1,in_port=1,dl_src=02:00:00:00:02:00,dl_dst=02:00:00:00:01:00 actions=output:2
+ cookie=0x0, duration=315.575s, table=0, n_packets=75, n_bytes=6714, priority=0 actions=CONTROLLER:65509

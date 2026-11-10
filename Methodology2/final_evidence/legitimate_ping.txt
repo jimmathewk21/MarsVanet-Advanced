@@ -1,0 +1,4 @@
+Legitimate Traffic After Mitigation
+
+5 packets transmitted, 5 received, 0% packet loss
+rtt min/avg/max/mdev = 0.293/0.979/2.174/0.651 ms

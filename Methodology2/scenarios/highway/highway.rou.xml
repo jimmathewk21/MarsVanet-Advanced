@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Highway demand: lower vehicle rate spread across three lanes at high speed
+     => sparse, fast traffic. This is the "sparse/fast" context that raises the
+     mobility-aware detection threshold. Keep the total injected vehicle count
+     comparable to the urban scenario so the urban-vs-highway comparison is
+     about mobility context, not raw demand. -->
+<routes>
+    <vType id="hw_car" accel="2.6" decel="4.5" sigma="0.5" length="5"
+           minGap="2.5" maxSpeed="33.33"/>
+
+    <route id="hw_route" edges="h_road"/>
+
+    <!-- 600 veh/h for 120 s. -->
+    <flow id="hw_vehicles" type="hw_car" route="hw_route"
+          begin="0" end="120" vehsPerHour="600" departSpeed="max"/>
+</routes>

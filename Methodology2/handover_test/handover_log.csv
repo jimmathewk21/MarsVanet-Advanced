@@ -1,0 +1,5 @@
+timestamp_unix,time_seconds,station,previous_ap,current_ap,handover_count
+1793157820.968,0.031,sta1,NONE,ap1,0
+1793157830.073,9.135,sta1,ap1,NONE,0
+1793157830.312,9.374,sta1,ap1,ap2,1
+1793157830.312,9.374,sta1,NONE,ap2,1

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="420" viewBox="0 0 1020 420">
+<rect width="1020" height="420" fill="white"/>
+<title>Malicious policy-attributed drops — combined — SIMULATION ONLY</title>
+<g font-family="Arial,sans-serif" fill="#172b3a">
+<text x="24" y="30" font-size="20">Malicious policy-attributed drops — combined</text>
+<text x="24" y="54" font-size="13">SIMULATION ONLY · mean and untruncated 95% Student-t CI across seeded trials</text>
+<path d="M215.00 84 V350" stroke="#dce4e8"/><text x="215.00" y="373" font-size="12">0%</text>
+<path d="M345.00 84 V350" stroke="#dce4e8"/><text x="345.00" y="373" font-size="12">20%</text>
+<path d="M475.00 84 V350" stroke="#dce4e8"/><text x="475.00" y="373" font-size="12">40%</text>
+<path d="M605.00 84 V350" stroke="#dce4e8"/><text x="605.00" y="373" font-size="12">60%</text>
+<path d="M735.00 84 V350" stroke="#dce4e8"/><text x="735.00" y="373" font-size="12">80%</text>
+<path d="M865.00 84 V350" stroke="#dce4e8"/><text x="865.00" y="373" font-size="12">100%</text>
+<text x="15" y="116" font-size="14">no_defense</text>
+<rect x="215" y="100" width="0.000" height="23" fill="#267d9c"/>
+<path d="M215.000 111 H215.000 M215.000 106 V116 M215.000 106 V116" stroke="#101010" fill="none" stroke-width="1.5"/>
+<text x="890" y="116" font-size="13">0.00% (n=5)</text>
+<text x="15" y="158" font-size="14">m1_only</text>
+<rect x="215" y="142" width="643.465" height="23" fill="#267d9c"/>
+<path d="M858.465 153 H858.465 M858.465 148 V158 M858.465 148 V158" stroke="#101010" fill="none" stroke-width="1.5"/>
+<text x="890" y="158" font-size="13">98.99% (n=5)</text>
+<text x="15" y="200" font-size="14">m2_only</text>
+<rect x="215" y="184" width="566.249" height="23" fill="#267d9c"/>
+<path d="M781.249 195 H781.249 M781.249 190 V200 M781.249 190 V200" stroke="#101010" fill="none" stroke-width="1.5"/>
+<text x="890" y="200" font-size="13">87.12% (n=5)</text>
+<text x="15" y="242" font-size="14">m3_only</text>
+<rect x="215" y="226" width="571.578" height="23" fill="#267d9c"/>
+<path d="M786.578 237 H786.578 M786.578 232 V242 M786.578 232 V242" stroke="#101010" fill="none" stroke-width="1.5"/>
+<text x="890" y="242" font-size="13">87.94% (n=5)</text>
+<text x="15" y="284" font-size="14">unified_dynamic</text>
+<rect x="215" y="268" width="606.767" height="23" fill="#267d9c"/>
+<path d="M821.767 279 H821.767 M821.767 274 V284 M821.767 274 V284" stroke="#101010" fill="none" stroke-width="1.5"/>
+<text x="890" y="284" font-size="13">93.35% (n=5)</text>
+<text x="15" y="326" font-size="14">unified_static</text>
+<rect x="215" y="310" width="643.465" height="23" fill="#267d9c"/>
+<path d="M858.465 321 H858.465 M858.465 316 V326 M858.465 316 V326" stroke="#101010" fill="none" stroke-width="1.5"/>
+<text x="890" y="326" font-size="13">98.99% (n=5)</text>
+<text x="24" y="405" font-size="12">Attack window only. Seeds vary modeled radio loss; routes and speeds are fixed. No real OpenFlow measurements.</text></g></svg>

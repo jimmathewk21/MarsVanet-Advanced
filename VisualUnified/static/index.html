@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>MarsNet — Unified SDN-VANET Simulation</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="identity">
+      <div class="logo"><span class="logo-orbit"></span><span class="logo-core"></span></div>
+      <div><div class="brand">MARS<span>NET</span><span class="brand-divider">/</span> <span class="brand-suffix">VANET LAB</span></div><div class="brand-sub">SOFTWARE-DEFINED VEHICULAR NETWORK SECURITY</div></div>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-tab="overview">Live simulation</button>
+      <button class="nav-item" data-tab="policies">SDN Control Center</button>
+      <button class="nav-item" data-tab="evidence">Evidence & logs</button>
+    </nav>
+    <div class="top-right"><span class="conn-dot" id="connDot"></span><span id="connText">CONNECTING</span><span class="top-separator"></span><span class="env-label">LOCAL SIMULATION</span></div>
+  </header>
+
+  <main>
+    <div class="page-top">
+      <div><div class="eyebrow">COMMAND CENTER <span class="eyebrow-sep">/</span> <span id="breadcrumb">OVERVIEW</span></div><h1 id="pageTitle">Network overview<span class="title-period">.</span></h1><p id="pageDescription">A living view of vehicle-to-vehicle and vehicle-to-infrastructure communication.</p></div>
+      <div class="toolbar">
+        <button class="btn btn-ghost" id="resetBtn" title="Reset simulation and counters, keeping your policy settings">↺ <span>Reset</span></button>
+        <select id="mobilitySelect" aria-label="Vehicle mobility engine" title="Built-in works offline. SUMO is an optional Windows-native installation."><option value="builtin">Built-in mobility</option><option value="sumo">Native SUMO</option></select>
+        <select id="speedSelect" aria-label="Simulation speed"><option value="0.5">0.5× speed</option><option value="1" selected>1× speed</option><option value="2">2× speed</option><option value="4">4× speed</option></select>
+        <button class="btn btn-primary" id="pauseBtn"><span id="pauseIcon">Ⅱ</span> <span id="pauseText">Pause</span></button>
+      </div>
+    </div>
+
+    <section class="kpis" aria-label="Live network statistics">
+      <article class="kpi"><div class="kpi-label">NETWORK PACKETS <span class="kpi-glyph">↗</span></div><div class="kpi-value" id="statSent">—</div><div class="kpi-foot">Total traffic generated <span class="little-dot cyan"></span></div></article>
+      <article class="kpi"><div class="kpi-label">PACKET DELIVERY <span class="kpi-glyph">◈</span></div><div class="kpi-value" id="statPdr">—</div><div class="kpi-foot">Legitimate PDR <strong id="statLegit">—</strong></div></article>
+      <article class="kpi"><div class="kpi-label">BLOCKED / DROPPED <span class="kpi-glyph">⊘</span></div><div class="kpi-value" id="statDrops">—</div><div class="kpi-foot">Rate-limited <strong id="statMeter">—</strong></div></article>
+      <article class="kpi"><div class="kpi-label">ACTIVE MITIGATIONS <span class="kpi-glyph">⬡</span></div><div class="kpi-value" id="statMitigations">—</div><div class="kpi-foot">RSU handovers <strong id="statHandovers">—</strong></div></article>
+    </section>
+
+    <section class="tab-pane" id="tab-overview">
+      <div class="main-grid">
+        <article class="panel map-panel">
+          <div class="panel-head"><div><span class="section-tiny">01 / SIMULATION WORLD</span><h2>Live VANET topology</h2></div><div class="pill"><span class="pulse-dot"></span><span id="simClock">T + 00:00</span></div></div>
+          <div class="map-wrap" id="mapWrap">
+            <canvas id="mapCanvas" aria-label="Animated roads, vehicles, roadside units and packets" role="img"></canvas>
+            <div class="map-layer-label"><span class="live-badge">● LIVE</span><span>3 ROAD NETWORKS · 3 RSUs · 12 VEHICLES</span></div>
+            <div class="map-hud"><div><span class="legend-mark data"></span> Telemetry / data</div><div><span class="legend-mark signal"></span> Safety (square = V2V)</div><div><span class="legend-mark beacon"></span> RSU beacon (ring)</div><div><span class="legend-mark attack"></span> Attack / drop</div><div><span class="legend-mark limited"></span> Throttled</div></div>
+            <details class="map-display"><summary>Map Display</summary><div class="map-display-options"><label><input type="checkbox" data-map-display="coverage"> RSU coverage</label><label><input type="checkbox" data-map-display="associations"> All associations</label><label><input type="checkbox" data-map-display="packets"> Packet effects</label><label><input type="checkbox" data-map-display="labels"> Vehicle labels</label><label><input type="checkbox" data-map-display="attacks"> Attack indicators</label><label><input type="checkbox" data-map-display="lowEffects"> Low effects</label></div></details>
+            <div class="map-view-controls" aria-label="Map view"><button type="button" id="zoomInBtn" aria-label="Zoom in">+</button><button type="button" id="zoomOutBtn" aria-label="Zoom out">−</button><button type="button" id="resetViewBtn">Reset view</button></div>
+            <div id="mobilityBadge" class="mobility-badge">Built-in / lane v2</div>
+            <div class="handover-banner" id="handoverBanner" role="status" aria-live="polite" hidden></div>
+            <div class="map-bottom-label">CLICK VEHICLE OR RSU · DRAG TO PAN</div>
+          </div>
+          <div class="map-footer"><div><span class="foot-indicator"></span><span>DATA PLANE</span> <b id="dataPlaneText">Awaiting packets</b></div><div><span>CONTROL PLANE</span><b class="healthy" id="controlPlaneText">3 policies active</b></div><div class="sim-badge">MODEL v1.0</div></div>
+        </article>
+
+        <aside class="right-stack">
+          <article class="panel scenario-panel">
+            <div class="panel-head"><div><span class="section-tiny">02 / EXPERIMENT CONTROL</span><h2>Threat scenarios</h2></div><span class="mini-icon">⌘</span></div>
+            <p class="subline">Inject events into the moving fleet to watch the controller respond.</p>
+            <div class="select-pair"><label>ATTACKER<select id="attackerSelect"></select></label><label>VICTIM<select id="victimSelect"></select></label></div>
+            <div class="scenario-grid"><button class="scenario-btn active" data-scenario="normal"><span class="scenario-icon">◯</span><span><strong>Normal traffic</strong><small>Baseline network</small></span></button><button class="scenario-btn" data-scenario="flood"><span class="scenario-icon danger">≋</span><span><strong>UDP flooding</strong><small>Methodology 2</small></span></button><button class="scenario-btn" data-scenario="misinformation"><span class="scenario-icon warning">⚠</span><span><strong>False safety data</strong><small>Methodology 3</small></span></button><button class="scenario-btn" data-scenario="combined"><span class="scenario-icon danger">✳</span><span><strong>Combined attack</strong><small>M2 + M3 enforced</small></span></button></div>
+            <div class="active-scenario"><span class="scenario-led" id="scenarioLed"></span><span id="scenarioDescription">Network operating normally</span></div>
+            <div class="demo-guide"><div class="demo-title">GUIDED DEFENSE DEMO</div><p id="demoStatus" aria-live="polite">Baseline → attack → detection → mitigation → recovery. Uses your current rules and settings.</p><div class="demo-steps" id="demoSteps" aria-label="Demo progress"><span>Normal</span><span>Attack</span><span>Detect</span><span>Mitigate</span><span>Recover</span></div><button class="btn btn-ghost small" id="demoBtn" type="button">Start guided demo</button></div>
+          </article>
+
+          <article class="panel inspector-panel">
+            <div class="panel-head"><div><span class="section-tiny">03 / NODE INSPECTOR</span><h2 id="inspectorTitle">Vehicle V07</h2></div><span class="inspector-badge" id="nodeBadge">CONNECTED</span></div>
+            <div id="vehicleInspector"><div class="vehicle-hero"><div class="vehicle-outline">▰</div><div><div class="vehicle-big" id="vehicleId">V07</div><div class="vehicle-meta" id="vehicleLocation">Loading telemetry…</div></div></div>
+            <div class="trust-head"><span>REPUTATION / TRUST SCORE</span><b id="trustValue">1.00</b></div><div class="trust-track"><div class="trust-fill" id="trustBar"></div></div>
+            <div class="vehicle-attrs"><div><span>Security state</span><strong id="nodeSecurity">NORMAL</strong></div><div><span>Attached RSU</span><strong id="nodeRsu">—</strong></div><div><span>M2 stage / threshold</span><strong id="nodeM2">—</strong></div><div><span>M3 reputation policy</span><strong id="nodeM3">—</strong></div><div><span>Motion</span><strong id="nodeSpeed">—</strong></div><div><span>M2 observed UDP rate</span><strong id="nodePps">—</strong></div><div><span>Victim UDP mitigation</span><strong id="nodeMeter">NONE</strong></div><div><span>Selected M1 UDP rule</span><strong id="nodeRule">None</strong></div><div><span>Handover count</span><strong id="nodeHandovers">0</strong></div></div>
+            <p class="subline" id="nodeMessages"></p><p class="subline" id="nodeCoverage"></p>
+            <details class="decision-inspector"><summary>Defense decision inspector</summary><strong>Current victim-UDP preview</strong><p id="nodeDecisionPreview"></p><strong>Latest actual packet decision</strong><p id="nodeLastDecision"></p><small>A preview evaluates installed policies only. Actual decisions include packet observation, token budgets and modeled link outcomes.</small></details></div>
+            <div id="rsuInspector" class="rsu-inspector" hidden><p id="rsuCoverage"></p><p id="rsuVehicles"></p><p id="rsuTraffic"></p><p id="rsuBytes"></p><small>Path outcomes are simulated end-to-end decisions on paths containing this RSU, not measured radio or OpenFlow counters.</small></div>
+          </article>
+        </aside>
+      </div>
+
+      <div class="bottom-grid">
+        <article class="panel traffic-panel"><div class="panel-head"><div><span class="section-tiny">04 / PACKET TELEMETRY</span><h2>Traffic monitor</h2></div><span class="metric-hint">LAST 60 SIMULATED SECONDS</span></div><div class="chart-legend"><span><i class="chart-color accepted"></i>Forwarded</span><span><i class="chart-color discarded"></i>Dropped</span><b id="livePps">0 pkt/s</b></div><div class="chart-wrap"><canvas id="trafficCanvas"></canvas></div></article>
+        <article class="panel event-panel"><div class="panel-head"><div><span class="section-tiny">05 / CONTROLLER EVENTS</span><h2>Live decision stream</h2></div><button class="linklike" id="seeEventsBtn">View all ↗</button></div><div id="eventList" class="event-list" aria-live="polite"></div></article>
+      </div>
+    </section>
+
+    <section class="tab-pane hidden" id="tab-policies">
+      <nav class="control-nav" aria-label="Control Center sections"><a href="#controlFlows">Simulated flows</a><a href="#ruleForm">Rule Studio</a><a href="#policyPreviewForm">Packet sandbox</a><a href="#controlEventList">Timeline</a></nav>
+      <div class="studio-grid">
+        <article class="panel studio-panel"><div class="panel-head"><div><span class="section-tiny">01 / UNIFIED CONTROL PLANE</span><h2>Methodology switches</h2></div><span class="badge-soft">POLICY PIPELINE</span></div>
+          <p class="subline">All three protection mechanisms operate together on the same vehicles and messages.</p>
+          <div class="method-list"><label class="method-card"><input type="checkbox" id="m1Toggle" checked><span class="method-index">M1</span><span class="method-text"><strong>Static source policies</strong><small>Priority-ordered DROP / ALLOW / METER rules</small></span><span class="switch"></span></label>
+          <label class="method-card"><input type="checkbox" id="m2Toggle" checked><span class="method-index">M2</span><span class="method-text"><strong>Mobility-aware DoS defense</strong><small>5-second tracker → meter / 1-second polls → timed drop</small></span><span class="switch"></span></label>
+          <label class="method-card"><input type="checkbox" id="m3Toggle" checked><span class="method-index">M3</span><span class="method-text"><strong>Safety-message reputation</strong><small>Validate motion → adjust trust → throttle/recover</small></span><span class="switch"></span></label></div>
+          <div class="pipeline"><span>INGRESS</span><b>→</b><span>M1 RULES</span><b>→</b><span>M2 DETECT</span><b>→</b><span>M3 TRUST</span><b>→</b><span>FORWARD</span></div>
+          <div class="note">Safety-message plausibility is assessed before forwarding. Effective traffic limits use the strictest applicable meter; a drop decision takes precedence over metering. <strong>Mobility selector:</strong> built-in runs without dependencies; optional native Windows SUMO supplies real microscopic car trajectories through TraCI. Changing mobility engines resets the experiment.</div>
+        </article>
+        <article class="panel studio-panel"><div class="panel-head"><div><span class="section-tiny">02 / PARAMETER TUNING</span><h2>Controller configuration</h2></div></div>
+          <form id="configForm" class="config-form"><label>Base M2 threshold <small>fallback packets / second</small><input type="number" name="base_pps" min="20" max="800" step="1"></label><label>Flood intensity <small>packets / second</small><input type="number" name="flood_pps" min="50" max="800" step="1"></label><label>Stage 1 minimum dwell <small>seconds before persistent-rate escalation</small><input type="number" name="stage2_after_sec" min="1" max="30" step="0.5"></label><label>Timed drop duration <small>seconds</small><input type="number" name="block_duration_sec" min="1" max="120" step="1"></label><label>Stage 1 meter <small>kbps</small><input type="number" name="m2_meter_kbps" min="50" max="10000" step="50"></label><label>Stage 1 flow lifetime <small>seconds; must exceed dwell</small><input type="number" name="m2_meter_lifetime_sec" min="2" max="120" step="1"></label><label>Dense / slow threshold <small>packets / second</small><input type="number" name="dense_pps" min="20" max="800" step="1"></label><label>Sparse / fast threshold <small>packets / second</small><input type="number" name="sparse_pps" min="20" max="800" step="1"></label><label>RSU radio radius <small>simulated meters</small><input type="number" name="rsu_range" min="130" max="500" step="10"></label><label>V2V radio range <small>simulated meters</small><input type="number" name="radio_range" min="50" max="350" step="10"></label><label>RSU backhaul capacity <small>megabits / second</small><input type="number" name="rsu_backhaul_mbps" min="0.25" max="50" step="0.25"></label><label>Maximum BSM penalty <small>coefficient × violation severity</small><input type="number" name="reputation_penalty" min="0.01" max="0.5" step="0.01"></label><label>Recovery gain <small>per configured valid streak (default 5)</small><input type="number" name="recovery_gain" min="0.005" max="0.2" step="0.005"></label><div class="full-row"><button class="btn btn-primary" type="submit">Apply live configuration</button></div></form>
+        </article>
+      </div>
+      <div class="studio-grid policy-grid">
+        <article class="panel studio-panel"><div class="panel-head"><div><span class="section-tiny">03 / OPENFLOW-LIKE MATCH–ACTION RULES</span><h2>Rule editor</h2></div><button class="btn btn-ghost small" id="clearRuleForm">+ New rule</button></div>
+          <p class="subline">Model software-defined packet rules by source, traffic class and ingress RSU. Changes take effect immediately.</p>
+          <form id="ruleForm" class="rule-form">
+            <input type="hidden" name="id" id="ruleId">
+            <label>Rule name<input name="label" required maxlength="80" placeholder="e.g., Block suspicious sender"></label>
+            <label>Priority (static stage)<input name="priority" type="number" required min="1" max="999" value="800"></label>
+            <label>Source identity<select name="source" id="ruleSource"></select></label>
+            <label>Destination identity<select name="destination" id="ruleDestination"></select></label>
+            <label>Traffic type<select name="traffic"><option value="*">All traffic (*)</option><option value="UDP_FLOOD">UDP flood / port 9999</option><option value="SAFETY">Safety / UDP 5005</option><option value="TELEMETRY">Telemetry / UDP 9000</option><option value="BEACON">Beacon / UDP 9001</option></select></label>
+            <label>Ingress RSU<select name="rsu"><option value="*">Any RSU (*)</option><option value="RSU-1">RSU-1</option><option value="RSU-2">RSU-2</option><option value="RSU-3">RSU-3</option></select></label>
+            <label>Source IPv4 or *<input name="source_ip" value="*" maxlength="15"></label>
+            <label>Destination IPv4 or *<input name="destination_ip" value="*" maxlength="15"></label>
+            <label>Protocol<select name="protocol"><option value="*">Any (*)</option><option>UDP</option><option>TCP</option><option>ICMP</option></select></label>
+            <label>Source port (blank = any)<input name="src_port" type="number" min="0" max="65535"></label>
+            <label>Destination port (blank = any)<input name="dst_port" type="number" min="0" max="65535"></label>
+            <label>Action<select name="action" id="ruleAction"><option value="DROP">DROP packet</option><option value="METER">METER / rate limit</option><option value="ALLOW">ALLOW (subject to M2/M3)</option></select></label>
+            <label id="rateField" class="rate-hidden">Meter rate (kbps)<input type="number" name="rate_kbps" min="10" max="50000" value="500"></label>
+            <label class="checkbox-field"><input type="checkbox" name="enabled" checked> Enable immediately</label>
+            <div class="full-row control-actions"><button class="btn btn-ghost" type="button" id="checkRuleBtn">Check draft</button><button class="btn btn-primary" type="submit" id="saveRuleBtn">Save SDN rule</button></div>
+          </form>
+          <p id="ruleFeedback" class="inline-tip" role="status" aria-live="polite">Draft checks are read-only. Valid intentional overlaps can be saved.</p>
+          <div class="note">For a live demonstration, create a DROP rule for the current attacker and UDP_FLOOD traffic; compare counters before and after enabling it.</div>
+        </article>
+        <article class="panel studio-panel"><div class="panel-head"><div><span class="section-tiny">04 / ACTIVE FLOW TABLE</span><h2>Configured rules <span id="ruleCount" class="count-pill">0</span></h2></div></div><div id="rulesList" class="rules-list"></div><div class="inline-tip">Higher-priority matching static rules are selected first. Dynamic DoS/reputation protections remain in force even when an ALLOW rule matches.</div></article>
+      </div>
+      <article class="panel runtime-panel"><div class="panel-head"><div><span class="section-tiny">05 / LIVE PROGRAMMED BEHAVIOR</span><h2>Effective runtime flow policies</h2></div><span class="badge-soft">LIVE DECISIONS</span></div><div id="runtimeFlowList" class="runtime-flows"></div><div class="inline-tip">These are software-simulated match/action decisions, not OpenFlow messages exchanged with a physical or virtual switch. M2 and M3 policies can both apply to the same vehicle.</div></article>
+      <article id="controlFlows" class="panel control-panel"><div class="panel-head"><h2>Simulated flow table</h2><span class="badge-soft">PACKET-PATH COUNTERS</span></div>
+        <div class="control-filters"><label>Origin<select id="flowOrigin"><option value="">All origins</option><option>User</option><option>M1</option><option>M2</option><option>M3</option><option>System</option></select></label><label>Status<select id="flowStatus"><option value="">All states</option><option value="active">Active</option><option value="inactive">Inactive</option></select></label><label>Find rule / node / IP<input id="flowSearch" type="search" maxlength="80"></label></div>
+        <div id="flowTable" class="flow-table-wrap"></div><div id="ruleWarnings" class="control-warnings" aria-live="polite"></div>
+        <p class="inline-tip">Priorities are local to each simulated pipeline stage. Match counts are selected/executed packet-path hits, not drops. Static counters restart on rule edits; dynamic counters accumulate until simulation reset.</p>
+      </article>
+      <div class="studio-grid control-grid">
+        <article class="panel control-panel"><div class="panel-head"><h2>Packet policy sandbox</h2><span class="badge-soft">READ ONLY</span></div>
+          <form id="policyPreviewForm" class="rule-form"><label>Source IPv4<input name="source_ip" required value="10.0.0.7"></label><label>Destination IPv4<input name="destination_ip" required value="10.0.0.2"></label><label>Protocol<select name="protocol"><option>UDP</option><option>TCP</option><option>ICMP</option></select></label><label>Packet size (bytes)<input name="size" type="number" min="1" max="65535" value="1024" required></label><label>Source port<input name="src_port" type="number" min="0" max="65535" value="40007"></label><label>Destination port<input name="dst_port" type="number" min="0" max="65535" value="9999"></label><div class="full-row"><button class="btn btn-primary" type="submit">Test hypothetical packet</button></div></form>
+          <div id="policyPreviewResult" class="preview-result" role="status" aria-live="polite">No packet has been tested. Offered traffic is UDP; TCP/ICMP are sandbox metadata only. Clear both ports for ICMP.</div>
+        </article>
+        <article class="panel control-panel"><div class="panel-head"><h2>Controller timeline</h2><button type="button" class="btn btn-ghost small" id="clearTimelineBtn">Clear displayed history</button></div>
+          <div class="control-filters"><label>Origin<select id="eventOrigin"><option value="">All origins</option><option>User</option><option>M1</option><option>M2</option><option>M3</option><option>Mobility</option><option>System</option></select></label><label>Vehicle<select id="eventVehicle"><option value="">All vehicles</option></select></label><label>Search<input id="eventSearch" type="search" maxlength="80"></label></div><div id="controlEventList" class="full-events controller-timeline"></div><p class="inline-tip">Newest 180 controller events. Clearing changes this browser's view only; controller state and exported history remain intact.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-pane hidden" id="tab-evidence">
+      <div class="evidence-grid"><article class="panel evidence-panel"><div class="panel-head"><div><span class="section-tiny">01 / EXPERIMENT ARTIFACTS</span><h2>Evidence dashboard</h2></div><button class="btn btn-primary" id="exportBtn">↓ Export JSON report</button></div><p class="subline">Capture the simulated scenario, rule set, per-second traffic metrics, and timestamped controller decisions for your demonstration or analysis.</p>
+        <div class="evidence-counters"><div><small>RECEIVED</small><b id="reportForwarded">—</b></div><div><small>STATIC M1 DROPS</small><b id="reportM1">—</b></div><div><small>M2 DROPS</small><b id="reportM2">—</b></div><div><small>RATE-LIMITED</small><b id="reportMeter">—</b></div><div><small>INVALID BSM</small><b id="reportBad">—</b></div><div><small>HANDOVERS</small><b id="reportHandover">—</b></div></div><h3>Why packets were dropped</h3><div id="reasonBars" class="reason-bars"></div>
+        <div class="note"><strong>Scientific integrity:</strong> These are results of a discrete-event software simulation. They are not measurements from Mininet-WiFi, Ryu, Open vSwitch, physical radios or real cars. Keep historical OVS benchmark evidence separate.</div>
+      </article><article class="panel evidence-panel"><div class="panel-head"><div><span class="section-tiny">02 / AUDIT TRACE</span><h2>Controller event log</h2></div><span class="badge-soft">NEWEST FIRST</span></div><div id="fullEventList" class="full-events"></div></article></div>
+    </section>
+
+    <footer class="footer"><span>© MARSNET RESEARCH LAB <span class="footer-divider">/</span> TEAM 14</span><span>SIMULATED SDN CONTROL PLANE <span class="footer-divider">·</span> WINDOWS-FIRST BUILD <span class="footer-divider">·</span> NOT PHYSICAL OPENFLOW</span></footer>
+  </main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="/app.js" defer></script>
+</body>
+</html>

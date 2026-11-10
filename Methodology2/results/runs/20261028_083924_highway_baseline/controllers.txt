@@ -1,0 +1,58 @@
+# 2026-10-28T08:39:24+05:30
+# ovs-vsctl list controller
+_uuid               : c69a3d3c-377e-4f89-8a9d-65cab2519714
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="311", state=ACTIVE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : c4016d9d-e811-44e1-a830-cf50539aa9cc
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="311", state=ACTIVE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : 976141da-ab62-47f5-a3af-f9dd71edac23
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="311", state=ACTIVE}
+target              : "tcp:127.0.0.1:6653"
+type                : []

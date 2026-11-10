@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "scope": "SIMULATION_ONLY health smoke; not a statistical performance comparison.",
+  "sources_sha256": {
+    "engine.py": "b5e71a54536065cac339319e0ef6b210db6778b2175795370634dc1767ab5239",
+    "mobility.py": "563f46d616fbc251e6d4fc28a2fbc59b4d5b7c56ba3e17bae1b15a6ddcb8ecc3",
+    "smoke_phase1.py": "0763beecb2b75e854d5eaff9fa4ed1d90488021ed21e3244591ba1f823d1ca5a"
+  },
+  "runs": [
+    {
+      "scenario": "normal",
+      "seed": 14,
+      "mobility_model": "lane_v2",
+      "simulated_seconds": 145.0,
+      "vehicle_count": 12,
+      "phases": [
+        {
+          "phase": "baseline",
+          "start_s": 0.0,
+          "end_s": 5.0,
+          "generated": 314,
+          "received": 312,
+          "dropped": 2
+        },
+        {
+          "phase": "attack",
+          "start_s": 5.0,
+          "end_s": 25.0,
+          "generated": 1230,
+          "received": 1221,
+          "dropped": 9
+        },
+        {
+          "phase": "recovery",
+          "start_s": 25.0,
+          "end_s": 145.0,
+          "generated": 7496,
+          "received": 7422,
+          "dropped": 74
+        }
+      ],
+      "counters": {
+        "sent": 9040,
+        "delivered": 8955,
+        "delivered_bytes": 2356100,
+        "legitimate_sent": 9040,
+        "legitimate_delivered": 8955,
+        "observed_safety": 3370,
+        "dropped": 85,
+        "dropped_bytes": 22500,
+        "handovers": 31
+      },
+      "m2_stages_seen": [
+        "NORMAL"
+      ],
+      "minimum_attacker_reputation": 1.0,
+      "final_attacker_reputation": 1.0,
+      "final_attacker_m2": "NORMAL"
+    },
+    {
+      "scenario": "combined",
+      "seed": 14,
+      "mobility_model": "lane_v2",
+      "simulated_seconds": 145.0,
+      "vehicle_count": 12,
+      "phases": [
+        {
+          "phase": "baseline",
+          "start_s": 0.0,
+          "end_s": 5.0,
+          "generated": 314,
+          "received": 312,
+          "dropped": 2
+        },
+        {
+          "phase": "attack",
+          "start_s": 5.0,
+          "end_s": 25.0,
+          "generated": 7630,
+          "received": 1540,
+          "dropped": 6090
+        },
+        {
+          "phase": "recovery",
+          "start_s": 25.0,
+          "end_s": 145.0,
+          "generated": 7496,
+          "received": 7439,
+          "dropped": 57
+        }
+      ],
+      "counters": {
+        "sent": 15440,
+        "delivered": 9291,
+        "delivered_bytes": 2688660,
+        "legitimate_sent": 9040,
+        "legitimate_delivered": 8971,
+        "observed_safety": 3374,
+        "dropped": 6149,
+        "dropped_bytes": 6243540,
+        "handovers": 31,
+        "attack_sent": 6400,
+        "attack_delivered": 320,
+        "m2_meter_drops": 407,
+        "invalid_safety": 40,
+        "m3_meter_drops": 2851,
+        "m2_blocks": 1
+      },
+      "m2_stages_seen": [
+        "BLOCK",
+        "METER",
+        "NORMAL"
+      ],
+      "minimum_attacker_reputation": 0.0,
+      "final_attacker_reputation": 0.86,
+      "final_attacker_m2": "NORMAL"
+    }
+  ]
+}

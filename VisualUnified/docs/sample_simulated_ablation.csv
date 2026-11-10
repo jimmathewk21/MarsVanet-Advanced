@@ -1,0 +1,7 @@
+study_type,profile,scenario,seed,simulated_seconds,total_generated_packets,total_delivered_packets,total_dropped_packets,overall_PDR_pct,legitimate_PDR_last_10s_pct,legitimate_PDR_whole_run_pct,attacker_sent_packets,attacker_delivered_packets,attacker_delivery_pct,M1_static_drops,M2_stage2_drops,M1_meter_drops,M2_meter_drops,M3_meter_drops,M2_blocks_triggered,invalid_BSM,attacker_final_reputation,handovers
+SIMULATION_ONLY,No defenses,combined,14,35.0,13295,11080,2215,83.3,96.8,97.7,11368,9197,80.9,0,0,0,0,0,0,0,1.0,6
+SIMULATION_ONLY,M1 only,combined,14,35.0,13295,2083,11212,15.7,99.5,99.5,11368,166,1.5,11200,0,0,0,0,0,0,1.0,6
+SIMULATION_ONLY,M2 only,combined,14,35.0,13295,2636,10659,19.8,98.5,98.7,11368,734,6.5,0,7712,0,2919,0,2,0,1.0,6
+SIMULATION_ONLY,M3 only,combined,14,35.0,13295,2926,10369,22.0,99.7,99.5,11368,1008,8.9,0,0,0,0,10356,0,70,0,6
+SIMULATION_ONLY,Unified dynamic,combined,14,35.0,13295,2395,10900,18.0,99.2,99.1,11368,486,4.3,0,7712,0,399,2768,2,70,0,6
+SIMULATION_ONLY,Unified + M1 static,combined,14,35.0,13295,2082,11213,15.7,99.5,99.4,11368,166,1.5,11200,0,0,0,2,2,70,0,6

@@ -1,0 +1,5 @@
+key_bits,observers,trials,plaintext_sum_median_ms,encryption_median_ms,encrypted_aggregation_median_ms,decryption_median_ms,encrypted_pipeline_median_ms,correctness
+256,1,20,0.000328,1.163,0.003,0.95,2.115,PASS
+256,3,20,0.000387,3.045,0.013,1.076,4.242,PASS
+256,5,20,0.000292,5.116,0.018,0.977,6.313,PASS
+256,10,20,0.000363,9.943,0.03,1.11,11.458,PASS

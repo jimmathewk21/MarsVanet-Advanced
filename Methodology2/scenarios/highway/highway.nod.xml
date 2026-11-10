@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Highway scenario: a 2 km straight, free-flowing road with no junctions,
+     giving the sparse/fast mobility context that raises the detection
+     threshold. -->
+<nodes>
+    <node id="h0" x="0.0"    y="0.0" type="dead_end"/>
+    <node id="h1" x="2000.0" y="0.0" type="dead_end"/>
+</nodes>

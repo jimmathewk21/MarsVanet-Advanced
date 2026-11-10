@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Urban scenario: a 1 km arterial broken by one signalised junction, so
+     vehicles slow and bunch (dense/slow mobility context). Lower free-flow
+     speed than the highway scenario. -->
+<nodes>
+    <node id="u0" x="0.0"    y="0.0" type="dead_end"/>
+    <node id="u1" x="500.0"  y="0.0" type="traffic_light"/>
+    <node id="u2" x="1000.0" y="0.0" type="dead_end"/>
+</nodes>

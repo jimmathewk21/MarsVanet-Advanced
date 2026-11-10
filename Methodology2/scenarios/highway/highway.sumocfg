@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build highway.net.xml first (see build_networks.sh), then run with:
+       sumo    -c scenarios/highway/highway.sumocfg
+       sumo-gui -c scenarios/highway/highway.sumocfg
+     or drive it from collect_mobility.py via TraCI to record a trace. -->
+<configuration>
+    <input>
+        <net-file value="highway.net.xml"/>
+        <route-files value="highway.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="200"/>
+        <step-length value="1.0"/>
+    </time>
+</configuration>

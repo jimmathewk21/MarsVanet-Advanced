@@ -1,0 +1,1117 @@
+scenario,profile,phase,metric,mean,ci95_low,ci95_high,n,missing,explanation
+combined,m1_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m1_only,attack,legitimate_pdr_pct,98.88695652173912,98.27914874792779,99.49476429555045,5,0,
+combined,m1_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+combined,m1_only,attack,m1_first_malicious_drop_delay_s,0.09999999999999964,0.09999999999999964,0.09999999999999964,5,0,
+combined,m1_only,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m1_only,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m1_only,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m1_only,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+combined,m1_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,m1_only,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m1_only,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m1_only,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m1_only,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+combined,m1_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,m1_only,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,m1_only,attack,malicious_delivery_pct,0.9899458623356535,0.9707430016843328,1.0091487229869742,5,0,
+combined,m1_only,attack,malicious_policy_drop_pct,98.99458623356536,98.99458623356536,98.99458623356536,5,0,
+combined,m1_only,attack,malicious_safety_controller_delivery_pct,99.5,98.112,100.888,5,0,
+combined,m1_only,attack,malicious_safety_delivery_pct,98.46153846153847,96.55159239829557,100.37148452478137,5,0,
+combined,m1_only,attack,malicious_suppression_pct,99.01005413766435,98.99085127701304,99.02925699831567,5,0,
+combined,m1_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m1_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m1_only,attack,udp_flood_delivery_pct,0.0,0.0,0.0,5,0,
+combined,m1_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m1_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+combined,m1_only,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m1_only,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m1_only,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m1_only,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m1_only,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m1_only,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m1_only,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,m1_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m1_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m1_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m1_only,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+combined,m1_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+combined,m1_only,recovery,m1_rule_removal_delay_s,,,,0,5,Static rule remains configured throughout; no rule-removal recovery is scheduled.
+combined,m1_only,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m1_only,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m1_only,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m1_only,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m1_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,m1_only,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m1_only,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m1_only,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,m1_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,m1_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,m1_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,m1_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m1_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m1_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,attack,legitimate_pdr_pct,98.88695652173912,98.27914874792779,99.49476429555045,5,0,
+combined,m2_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+combined,m2_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,m2_only,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,attack,m2_block_duration_s,9.5,9.5,9.5,5,0,
+combined,m2_only,attack,m2_detection_delay_s,0.5,0.5,0.5,5,0,
+combined,m2_only,attack,m2_first_malicious_drop_delay_s,0.5999999999999996,0.5999999999999996,0.5999999999999996,5,0,
+combined,m2_only,attack,m2_meter_duration_s,10.0,10.0,10.0,5,0,
+combined,m2_only,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m2_only,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m2_only,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+combined,m2_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,m2_only,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,m2_only,attack,malicious_delivery_pct,12.717710750193348,12.692673283124375,12.74274821726232,5,0,
+combined,m2_only,attack,malicious_policy_drop_pct,87.11523588553752,87.11523588553752,87.11523588553752,5,0,
+combined,m2_only,attack,malicious_safety_controller_delivery_pct,99.5,98.112,100.888,5,0,
+combined,m2_only,attack,malicious_safety_delivery_pct,98.46153846153847,96.55159239829557,100.37148452478137,5,0,
+combined,m2_only,attack,malicious_suppression_pct,87.28228924980665,87.25725178273768,87.30732671687562,5,0,
+combined,m2_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m2_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m2_only,attack,udp_flood_delivery_pct,11.846875,11.815001014722034,11.878748985277968,5,0,
+combined,m2_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+combined,m2_only,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+combined,m2_only,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,m2_only,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m2_only,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m2_only,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,m2_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m2_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m2_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+combined,m2_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+combined,m2_only,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+combined,m2_only,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,m2_only,recovery,m2_block_duration_s,20.5,20.5,20.5,5,0,
+combined,m2_only,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,m2_only,recovery,m2_recovery_delay_s,20.5,20.5,20.5,5,0,
+combined,m2_only,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m2_only,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,m2_only,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,m2_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,m2_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,m2_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,m2_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m2_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m2_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,attack,legitimate_pdr_pct,98.88695652173912,98.27914874792779,99.49476429555045,5,0,
+combined,m3_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+combined,m3_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,m3_only,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m3_only,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m3_only,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m3_only,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+combined,m3_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,m3_only,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m3_only,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,attack,m3_detection_delay_s,0.5,0.5,0.5,5,0,
+combined,m3_only,attack,m3_first_malicious_drop_delay_s,1.5,1.5,1.5,5,0,
+combined,m3_only,attack,m3_meter_duration_s,18.5,18.5,18.5,5,0,
+combined,m3_only,attack,malicious_delivery_pct,10.8584686774942,10.817733258540011,10.899204096448388,5,0,
+combined,m3_only,attack,malicious_policy_drop_pct,87.93503480278422,87.93503480278422,87.93503480278422,5,0,
+combined,m3_only,attack,malicious_safety_controller_delivery_pct,99.5,98.112,100.888,5,0,
+combined,m3_only,attack,malicious_safety_delivery_pct,98.46153846153847,96.55159239829557,100.37148452478137,5,0,
+combined,m3_only,attack,malicious_suppression_pct,89.14153132250581,89.10079590355163,89.18226674146,5,0,
+combined,m3_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m3_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m3_only,attack,udp_flood_delivery_pct,9.96875,9.925375,10.012125,5,0,
+combined,m3_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+combined,m3_only,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m3_only,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m3_only,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m3_only,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m3_only,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,m3_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m3_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m3_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+combined,m3_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+combined,m3_only,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+combined,m3_only,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m3_only,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,m3_only,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m3_only,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,m3_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,m3_only,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,m3_only,recovery,m3_meter_duration_s,104.9,103.8800324711051,105.91996752889492,5,0,
+combined,m3_only,recovery,m3_meter_recovery_delay_s,104.9,103.8800324711051,105.91996752889492,5,0,
+combined,m3_only,recovery,m3_reputation_recovery_delay_s,130.4,129.2896,131.5104,5,0,
+combined,m3_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,m3_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,m3_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,m3_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,no_defense,attack,legitimate_pdr_pct,97.28695652173913,96.3921791598582,98.18173388362005,5,0,
+combined,no_defense,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+combined,no_defense,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,no_defense,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,no_defense,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,no_defense,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,no_defense,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+combined,no_defense,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,no_defense,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,no_defense,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,no_defense,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,no_defense,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+combined,no_defense,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,no_defense,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,no_defense,attack,malicious_delivery_pct,76.03712296983758,76.02105670393553,76.05318923573964,5,0,
+combined,no_defense,attack,malicious_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,no_defense,attack,malicious_safety_controller_delivery_pct,99.5,98.112,100.888,5,0,
+combined,no_defense,attack,malicious_safety_delivery_pct,98.46153846153847,96.55159239829557,100.37148452478137,5,0,
+combined,no_defense,attack,malicious_suppression_pct,23.96287703016241,23.946810764260345,23.978943296064475,5,0,
+combined,no_defense,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,no_defense,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,no_defense,attack,udp_flood_delivery_pct,75.809375,75.79314556108487,75.82560443891514,5,0,
+combined,no_defense,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,no_defense,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+combined,no_defense,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,no_defense,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,no_defense,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,no_defense,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,no_defense,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,no_defense,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,no_defense,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,no_defense,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,no_defense,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,no_defense,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,no_defense,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+combined,no_defense,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+combined,no_defense,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+combined,no_defense,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,no_defense,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+combined,no_defense,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+combined,no_defense,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+combined,no_defense,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,no_defense,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,no_defense,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+combined,no_defense,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+combined,no_defense,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,no_defense,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,no_defense,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,no_defense,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,no_defense,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,no_defense,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,attack,legitimate_pdr_pct,98.88695652173912,98.27914874792779,99.49476429555045,5,0,
+combined,unified_dynamic,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+combined,unified_dynamic,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,unified_dynamic,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,attack,m2_block_duration_s,9.5,9.5,9.5,5,0,
+combined,unified_dynamic,attack,m2_detection_delay_s,0.5,0.5,0.5,5,0,
+combined,unified_dynamic,attack,m2_first_malicious_drop_delay_s,0.5999999999999996,0.5999999999999996,0.5999999999999996,5,0,
+combined,unified_dynamic,attack,m2_meter_duration_s,10.0,10.0,10.0,5,0,
+combined,unified_dynamic,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,attack,m3_detection_delay_s,0.5,0.5,0.5,5,0,
+combined,unified_dynamic,attack,m3_first_malicious_drop_delay_s,2.0999999999999996,2.0999999999999996,2.0999999999999996,5,0,
+combined,unified_dynamic,attack,m3_meter_duration_s,18.5,18.5,18.5,5,0,
+combined,unified_dynamic,attack,malicious_delivery_pct,6.539829853054911,6.508276333212842,6.571383372896981,5,0,
+combined,unified_dynamic,attack,malicious_policy_drop_pct,93.34880123743233,93.34880123743233,93.34880123743233,5,0,
+combined,unified_dynamic,attack,malicious_safety_controller_delivery_pct,99.5,98.112,100.888,5,0,
+combined,unified_dynamic,attack,malicious_safety_delivery_pct,98.46153846153847,96.55159239829557,100.37148452478137,5,0,
+combined,unified_dynamic,attack,malicious_suppression_pct,93.4601701469451,93.42861662710304,93.49172366678717,5,0,
+combined,unified_dynamic,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,unified_dynamic,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,unified_dynamic,attack,udp_flood_delivery_pct,5.60625,5.5689374141542025,5.643562585845798,5,0,
+combined,unified_dynamic,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+combined,unified_dynamic,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,unified_dynamic,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,unified_dynamic,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+combined,unified_dynamic,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+combined,unified_dynamic,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+combined,unified_dynamic,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,recovery,m2_block_duration_s,20.5,20.5,20.5,5,0,
+combined,unified_dynamic,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,recovery,m2_recovery_delay_s,20.5,20.5,20.5,5,0,
+combined,unified_dynamic,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_dynamic,recovery,m3_meter_duration_s,104.9,103.8800324711051,105.91996752889492,5,0,
+combined,unified_dynamic,recovery,m3_meter_recovery_delay_s,104.9,103.8800324711051,105.91996752889492,5,0,
+combined,unified_dynamic,recovery,m3_reputation_recovery_delay_s,130.4,129.2896,131.5104,5,0,
+combined,unified_dynamic,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_dynamic,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,unified_dynamic,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,unified_dynamic,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,legitimate_pdr_pct,98.88695652173912,98.27914874792779,99.49476429555045,5,0,
+combined,unified_static,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+combined,unified_static,attack,m1_first_malicious_drop_delay_s,0.09999999999999964,0.09999999999999964,0.09999999999999964,5,0,
+combined,unified_static,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,m2_block_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,m2_detection_delay_s,,,,0,5,No M2 detection observed; the preconfigured M1 DROP removes flood packets before M2 observation.
+combined,unified_static,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,unified_static,attack,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,attack,m3_detection_delay_s,0.5,0.5,0.5,5,0,
+combined,unified_static,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+combined,unified_static,attack,m3_meter_duration_s,18.5,18.5,18.5,5,0,
+combined,unified_static,attack,malicious_delivery_pct,0.9899458623356535,0.9707430016843328,1.0091487229869742,5,0,
+combined,unified_static,attack,malicious_policy_drop_pct,98.99458623356536,98.99458623356536,98.99458623356536,5,0,
+combined,unified_static,attack,malicious_safety_controller_delivery_pct,99.5,98.112,100.888,5,0,
+combined,unified_static,attack,malicious_safety_delivery_pct,98.46153846153847,96.55159239829557,100.37148452478137,5,0,
+combined,unified_static,attack,malicious_suppression_pct,99.01005413766435,98.99085127701304,99.02925699831567,5,0,
+combined,unified_static,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,unified_static,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,unified_static,attack,udp_flood_delivery_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+combined,unified_static,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,unified_static,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,unified_static,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+combined,unified_static,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+combined,unified_static,recovery,m1_rule_removal_delay_s,,,,0,5,Static rule remains configured throughout; no rule-removal recovery is scheduled.
+combined,unified_static,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,m2_block_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+combined,unified_static,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+combined,unified_static,recovery,m3_meter_duration_s,104.9,103.8800324711051,105.91996752889492,5,0,
+combined,unified_static,recovery,m3_meter_recovery_delay_s,104.9,103.8800324711051,105.91996752889492,5,0,
+combined,unified_static,recovery,m3_reputation_recovery_delay_s,130.4,129.2896,131.5104,5,0,
+combined,unified_static,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+combined,unified_static,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+combined,unified_static,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+combined,unified_static,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m1_only,attack,legitimate_pdr_pct,98.8641975308642,98.23267352605806,99.49572153567034,5,0,
+flood,m1_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+flood,m1_only,attack,m1_first_malicious_drop_delay_s,0.09999999999999964,0.09999999999999964,0.09999999999999964,5,0,
+flood,m1_only,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m1_only,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m1_only,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m1_only,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+flood,m1_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m1_only,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m1_only,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m1_only,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m1_only,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+flood,m1_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m1_only,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,m1_only,attack,malicious_delivery_pct,0.0,0.0,0.0,5,0,
+flood,m1_only,attack,malicious_policy_drop_pct,100.0,100.0,100.0,5,0,
+flood,m1_only,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,attack,malicious_suppression_pct,100.0,100.0,100.0,5,0,
+flood,m1_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m1_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m1_only,attack,udp_flood_delivery_pct,0.0,0.0,0.0,5,0,
+flood,m1_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m1_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+flood,m1_only,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m1_only,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m1_only,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m1_only,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m1_only,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m1_only,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m1_only,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,m1_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m1_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m1_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m1_only,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+flood,m1_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+flood,m1_only,recovery,m1_rule_removal_delay_s,,,,0,5,Static rule remains configured throughout; no rule-removal recovery is scheduled.
+flood,m1_only,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m1_only,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m1_only,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m1_only,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m1_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m1_only,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m1_only,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m1_only,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,m1_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m1_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m1_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,m1_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m1_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m1_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,attack,legitimate_pdr_pct,98.8641975308642,98.23267352605806,99.49572153567034,5,0,
+flood,m2_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+flood,m2_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m2_only,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,attack,m2_block_duration_s,9.5,9.5,9.5,5,0,
+flood,m2_only,attack,m2_detection_delay_s,0.5,0.5,0.5,5,0,
+flood,m2_only,attack,m2_first_malicious_drop_delay_s,0.5999999999999996,0.5999999999999996,0.5999999999999996,5,0,
+flood,m2_only,attack,m2_meter_duration_s,10.0,10.0,10.0,5,0,
+flood,m2_only,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m2_only,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m2_only,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+flood,m2_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m2_only,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,m2_only,attack,malicious_delivery_pct,11.846875,11.815001014722034,11.878748985277968,5,0,
+flood,m2_only,attack,malicious_policy_drop_pct,88.0,88.0,88.0,5,0,
+flood,m2_only,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,attack,malicious_suppression_pct,88.153125,88.12125101472203,88.18499898527797,5,0,
+flood,m2_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m2_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m2_only,attack,udp_flood_delivery_pct,11.846875,11.815001014722034,11.878748985277968,5,0,
+flood,m2_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+flood,m2_only,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+flood,m2_only,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,m2_only,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m2_only,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m2_only,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,m2_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m2_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m2_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+flood,m2_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+flood,m2_only,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+flood,m2_only,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,m2_only,recovery,m2_block_duration_s,20.5,20.5,20.5,5,0,
+flood,m2_only,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,m2_only,recovery,m2_recovery_delay_s,20.5,20.5,20.5,5,0,
+flood,m2_only,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m2_only,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,m2_only,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,m2_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m2_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m2_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,m2_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m2_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m2_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,attack,legitimate_pdr_pct,97.34979423868313,96.44334070183606,98.2562477755302,5,0,
+flood,m3_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+flood,m3_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m3_only,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m3_only,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m3_only,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m3_only,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+flood,m3_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m3_only,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m3_only,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,attack,m3_detection_delay_s,,,,0,5,No injected inconsistent safety reports in this scenario; M3 is not a generic flood detector.
+flood,m3_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,m3_only,attack,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,m3_only,attack,malicious_delivery_pct,75.809375,75.79314556108487,75.82560443891514,5,0,
+flood,m3_only,attack,malicious_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,attack,malicious_suppression_pct,24.190625,24.174395561084868,24.206854438915133,5,0,
+flood,m3_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m3_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m3_only,attack,udp_flood_delivery_pct,75.809375,75.79314556108487,75.82560443891514,5,0,
+flood,m3_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+flood,m3_only,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m3_only,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m3_only,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m3_only,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m3_only,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,m3_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m3_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m3_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+flood,m3_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+flood,m3_only,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+flood,m3_only,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m3_only,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,m3_only,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m3_only,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,m3_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m3_only,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,m3_only,recovery,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,m3_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m3_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,m3_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,m3_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,m3_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,m3_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,no_defense,attack,legitimate_pdr_pct,97.34979423868313,96.44334070183606,98.2562477755302,5,0,
+flood,no_defense,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+flood,no_defense,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,no_defense,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,no_defense,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,no_defense,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,no_defense,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+flood,no_defense,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,no_defense,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,no_defense,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,no_defense,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,no_defense,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+flood,no_defense,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,no_defense,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,no_defense,attack,malicious_delivery_pct,75.809375,75.79314556108487,75.82560443891514,5,0,
+flood,no_defense,attack,malicious_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,no_defense,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,attack,malicious_suppression_pct,24.190625,24.174395561084868,24.206854438915133,5,0,
+flood,no_defense,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,no_defense,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,no_defense,attack,udp_flood_delivery_pct,75.809375,75.79314556108487,75.82560443891514,5,0,
+flood,no_defense,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,no_defense,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+flood,no_defense,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,no_defense,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,no_defense,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,no_defense,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,no_defense,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,no_defense,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,no_defense,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,no_defense,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,no_defense,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,no_defense,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,no_defense,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+flood,no_defense,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+flood,no_defense,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+flood,no_defense,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,no_defense,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+flood,no_defense,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+flood,no_defense,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+flood,no_defense,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,no_defense,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,no_defense,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+flood,no_defense,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+flood,no_defense,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,no_defense,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,no_defense,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,no_defense,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,no_defense,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,no_defense,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,attack,legitimate_pdr_pct,98.8641975308642,98.23267352605806,99.49572153567034,5,0,
+flood,unified_dynamic,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+flood,unified_dynamic,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,unified_dynamic,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,attack,m2_block_duration_s,9.5,9.5,9.5,5,0,
+flood,unified_dynamic,attack,m2_detection_delay_s,0.5,0.5,0.5,5,0,
+flood,unified_dynamic,attack,m2_first_malicious_drop_delay_s,0.5999999999999996,0.5999999999999996,0.5999999999999996,5,0,
+flood,unified_dynamic,attack,m2_meter_duration_s,10.0,10.0,10.0,5,0,
+flood,unified_dynamic,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,attack,m3_detection_delay_s,,,,0,5,No injected inconsistent safety reports in this scenario; M3 is not a generic flood detector.
+flood,unified_dynamic,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,unified_dynamic,attack,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,attack,malicious_delivery_pct,11.846875,11.815001014722034,11.878748985277968,5,0,
+flood,unified_dynamic,attack,malicious_policy_drop_pct,88.0,88.0,88.0,5,0,
+flood,unified_dynamic,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,attack,malicious_suppression_pct,88.153125,88.12125101472203,88.18499898527797,5,0,
+flood,unified_dynamic,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,unified_dynamic,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,unified_dynamic,attack,udp_flood_delivery_pct,11.846875,11.815001014722034,11.878748985277968,5,0,
+flood,unified_dynamic,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+flood,unified_dynamic,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,unified_dynamic,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,unified_dynamic,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+flood,unified_dynamic,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+flood,unified_dynamic,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+flood,unified_dynamic,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,m2_block_duration_s,20.5,20.5,20.5,5,0,
+flood,unified_dynamic,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,m2_recovery_delay_s,20.5,20.5,20.5,5,0,
+flood,unified_dynamic,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_dynamic,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,unified_dynamic,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,unified_dynamic,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_dynamic,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,unified_dynamic,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,unified_dynamic,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,legitimate_pdr_pct,98.8641975308642,98.23267352605806,99.49572153567034,5,0,
+flood,unified_static,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+flood,unified_static,attack,m1_first_malicious_drop_delay_s,0.09999999999999964,0.09999999999999964,0.09999999999999964,5,0,
+flood,unified_static,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,m2_block_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,m2_detection_delay_s,,,,0,5,No M2 detection observed; the preconfigured M1 DROP removes flood packets before M2 observation.
+flood,unified_static,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,unified_static,attack,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,m3_detection_delay_s,,,,0,5,No injected inconsistent safety reports in this scenario; M3 is not a generic flood detector.
+flood,unified_static,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+flood,unified_static,attack,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,malicious_delivery_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,attack,malicious_policy_drop_pct,100.0,100.0,100.0,5,0,
+flood,unified_static,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,attack,malicious_suppression_pct,100.0,100.0,100.0,5,0,
+flood,unified_static,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,unified_static,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,unified_static,attack,udp_flood_delivery_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+flood,unified_static,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,unified_static,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,unified_static,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,legitimate_pdr_pct,99.05558613098515,98.95360093717393,99.15757132479636,5,0,
+flood,unified_static,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+flood,unified_static,recovery,m1_rule_removal_delay_s,,,,0,5,Static rule remains configured throughout; no rule-removal recovery is scheduled.
+flood,unified_static,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m2_block_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,unified_static,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+flood,unified_static,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,unified_static,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+flood,unified_static,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+flood,unified_static,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+flood,unified_static,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+flood,unified_static,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m1_only,attack,legitimate_pdr_pct,99.1275720164609,98.89234017060592,99.36280386231589,5,0,
+normal,m1_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+normal,m1_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m1_only,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m1_only,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m1_only,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m1_only,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+normal,m1_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m1_only,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m1_only,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m1_only,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m1_only,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+normal,m1_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m1_only,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,m1_only,attack,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,attack,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,attack,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m1_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m1_only,attack,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m1_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+normal,m1_only,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m1_only,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m1_only,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m1_only,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m1_only,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m1_only,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m1_only,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,m1_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m1_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m1_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m1_only,recovery,legitimate_pdr_pct,99.11502476609796,99.01810920365574,99.21194032854018,5,0,
+normal,m1_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+normal,m1_only,recovery,m1_rule_removal_delay_s,,,,0,5,Static rule remains configured throughout; no rule-removal recovery is scheduled.
+normal,m1_only,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m1_only,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m1_only,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m1_only,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m1_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m1_only,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m1_only,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m1_only,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,m1_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m1_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m1_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m1_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m1_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m1_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,attack,legitimate_pdr_pct,99.1275720164609,98.89234017060592,99.36280386231589,5,0,
+normal,m2_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+normal,m2_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m2_only,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,attack,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,m2_only,attack,m2_detection_delay_s,,,,0,5,No matching dynamic detection observed; absence is not zero latency.
+normal,m2_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m2_only,attack,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,m2_only,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m2_only,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m2_only,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+normal,m2_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m2_only,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,m2_only,attack,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,attack,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,attack,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m2_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m2_only,attack,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+normal,m2_only,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,m2_only,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,m2_only,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m2_only,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m2_only,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,m2_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m2_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m2_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,recovery,legitimate_pdr_pct,99.11502476609796,99.01810920365574,99.21194032854018,5,0,
+normal,m2_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+normal,m2_only,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+normal,m2_only,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,m2_only,recovery,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,m2_only,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,m2_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m2_only,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m2_only,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,m2_only,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,m2_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m2_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m2_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m2_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m2_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m2_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,attack,legitimate_pdr_pct,99.1275720164609,98.89234017060592,99.36280386231589,5,0,
+normal,m3_only,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+normal,m3_only,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m3_only,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m3_only,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m3_only,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m3_only,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+normal,m3_only,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m3_only,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m3_only,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,attack,m3_detection_delay_s,,,,0,5,No injected inconsistent safety reports in this scenario; M3 is not a generic flood detector.
+normal,m3_only,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,m3_only,attack,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,m3_only,attack,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,attack,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,attack,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m3_only,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m3_only,attack,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+normal,m3_only,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m3_only,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m3_only,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m3_only,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m3_only,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,m3_only,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m3_only,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m3_only,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,recovery,legitimate_pdr_pct,99.11502476609796,99.01810920365574,99.21194032854018,5,0,
+normal,m3_only,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+normal,m3_only,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+normal,m3_only,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m3_only,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,m3_only,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m3_only,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,m3_only,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m3_only,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,m3_only,recovery,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,m3_only,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m3_only,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,m3_only,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,m3_only,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,m3_only,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,m3_only,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,no_defense,attack,legitimate_pdr_pct,99.1275720164609,98.89234017060592,99.36280386231589,5,0,
+normal,no_defense,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+normal,no_defense,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,no_defense,attack,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,no_defense,attack,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,no_defense,attack,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,no_defense,attack,m2_detection_delay_s,,,,0,5,M2 disabled.
+normal,no_defense,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,no_defense,attack,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,no_defense,attack,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,no_defense,attack,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,no_defense,attack,m3_detection_delay_s,,,,0,5,M3 disabled.
+normal,no_defense,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,no_defense,attack,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,no_defense,attack,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,attack,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,attack,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,no_defense,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,no_defense,attack,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,no_defense,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+normal,no_defense,baseline,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,no_defense,baseline,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,no_defense,baseline,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,no_defense,baseline,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,no_defense,baseline,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,no_defense,baseline,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,no_defense,baseline,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,no_defense,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,no_defense,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,no_defense,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,no_defense,recovery,legitimate_pdr_pct,99.11502476609796,99.01810920365574,99.21194032854018,5,0,
+normal,no_defense,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+normal,no_defense,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+normal,no_defense,recovery,m2_benign_source_alert_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,no_defense,recovery,m2_benign_source_restriction_rate_pct,,,,0,5,M2 disabled in this profile.
+normal,no_defense,recovery,m2_block_duration_s,,,,0,5,M2 disabled in this profile.
+normal,no_defense,recovery,m2_meter_duration_s,,,,0,5,M2 disabled in this profile.
+normal,no_defense,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,no_defense,recovery,m3_benign_source_alert_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,no_defense,recovery,m3_benign_source_restriction_rate_pct,,,,0,5,M3 disabled in this profile.
+normal,no_defense,recovery,m3_meter_duration_s,,,,0,5,M3 disabled in this profile.
+normal,no_defense,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,no_defense,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,no_defense,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,no_defense,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,no_defense,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,no_defense,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,legitimate_pdr_pct,99.1275720164609,98.89234017060592,99.36280386231589,5,0,
+normal,unified_dynamic,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+normal,unified_dynamic,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,unified_dynamic,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,m2_detection_delay_s,,,,0,5,No matching dynamic detection observed; absence is not zero latency.
+normal,unified_dynamic,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,unified_dynamic,attack,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,m3_detection_delay_s,,,,0,5,No injected inconsistent safety reports in this scenario; M3 is not a generic flood detector.
+normal,unified_dynamic,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,unified_dynamic,attack,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,attack,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,attack,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,attack,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,unified_dynamic,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,unified_dynamic,attack,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+normal,unified_dynamic,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,unified_dynamic,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,unified_dynamic,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,legitimate_pdr_pct,99.11502476609796,99.01810920365574,99.21194032854018,5,0,
+normal,unified_dynamic,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+normal,unified_dynamic,recovery,m1_rule_removal_delay_s,,,,0,5,No active study M1 static rule in this profile.
+normal,unified_dynamic,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,unified_dynamic,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_dynamic,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,unified_dynamic,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,unified_dynamic,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_dynamic,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,unified_dynamic,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,unified_dynamic,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,attack,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,legitimate_pdr_pct,99.1275720164609,98.89234017060592,99.36280386231589,5,0,
+normal,unified_static,attack,m1_detection_delay_s,,,,0,5,M1 is a preconfigured static rule; it does not detect attacks.
+normal,unified_static,attack,m1_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,unified_static,attack,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,m2_detection_delay_s,,,,0,5,No M2 detection observed; the preconfigured M1 DROP removes flood packets before M2 observation.
+normal,unified_static,attack,m2_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,unified_static,attack,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,m3_detection_delay_s,,,,0,5,No injected inconsistent safety reports in this scenario; M3 is not a generic flood detector.
+normal,unified_static,attack,m3_first_malicious_drop_delay_s,,,,0,5,No malicious packet drop attributed to this policy.
+normal,unified_static,attack,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,attack,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,attack,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,attack,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,attack,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,attack,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,attack,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,unified_static,attack,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,unified_static,attack,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,baseline,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,legitimate_pdr_pct,99.01234567901234,98.4207665675009,99.60392479052378,5,0,
+normal,unified_static,baseline,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,baseline,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,baseline,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,baseline,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,baseline,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,baseline,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,baseline,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,unified_static,baseline,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,unified_static,baseline,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,recovery,benign_policy_drop_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,legitimate_pdr_pct,99.11502476609796,99.01810920365574,99.21194032854018,5,0,
+normal,unified_static,recovery,legitimate_throughput_recovery_s,,,,0,5,Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately.
+normal,unified_static,recovery,m1_rule_removal_delay_s,,,,0,5,Static rule remains configured throughout; no rule-removal recovery is scheduled.
+normal,unified_static,recovery,m2_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m2_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m2_block_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m2_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m2_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,unified_static,recovery,m3_benign_source_alert_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m3_benign_source_restriction_rate_pct,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m3_meter_duration_s,0.0,0.0,0.0,5,0,
+normal,unified_static,recovery,m3_meter_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,unified_static,recovery,m3_reputation_recovery_delay_s,,,,0,5,No corresponding attacker restriction was observed during attack.
+normal,unified_static,recovery,malicious_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,recovery,malicious_policy_drop_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,recovery,malicious_safety_controller_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,recovery,malicious_safety_delivery_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,recovery,malicious_suppression_pct,,,,0,5,No generated packets in this class/window.
+normal,unified_static,recovery,network_latency_ms,,,,0,5,Engine delivery is instantaneous; no measured propagation/queue/receiver delay.
+normal,unified_static,recovery,transmitted_packets,,,,0,5,Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts.
+normal,unified_static,recovery,udp_flood_delivery_pct,,,,0,5,No generated packets in this class/window.

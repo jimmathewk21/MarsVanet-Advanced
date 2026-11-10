@@ -1,0 +1,1206 @@
+{
+  "study_type": "SIMULATION_ONLY",
+  "run_id": "flood__m1_only__seed-16__bd877e54debf",
+  "profile": "m1_only",
+  "scenario": "flood",
+  "seed": 16,
+  "spec": {
+    "seeds": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scenarios": [
+      "normal",
+      "flood",
+      "combined"
+    ],
+    "baseline_seconds": 10,
+    "attack_seconds": 20,
+    "recovery_seconds": 150,
+    "step_seconds": 0.1,
+    "attacker": "V07",
+    "victim": "V02"
+  },
+  "config": {
+    "base_pps": 120,
+    "flood_pps": 320,
+    "stage2_after_sec": 10.0,
+    "block_duration_sec": 30.0,
+    "m2_meter_kbps": 500,
+    "m2_window_sec": 5.0,
+    "m2_meter_lifetime_sec": 15.0,
+    "m2_reset_sec": 30.0,
+    "dense_pps": 90,
+    "sparse_pps": 150,
+    "handover_floor_pps": 150,
+    "m2_monitored_rsu": "*",
+    "radio_range": 185,
+    "rsu_range": 330,
+    "rsu_backhaul_mbps": 2.0,
+    "max_reported_speed_kmh": 198,
+    "max_acceleration_mps2": 8.0,
+    "position_tolerance_m": 10.0,
+    "reputation_penalty": 0.2,
+    "recovery_every": 5,
+    "recovery_gain": 0.02,
+    "loss_probability": 0.01,
+    "m1_enabled": true,
+    "m2_enabled": false,
+    "m3_enabled": false
+  },
+  "rules": [
+    {
+      "id": "rule-example",
+      "priority": 800,
+      "source": "V07",
+      "traffic": "UDP_FLOOD",
+      "rsu": "*",
+      "action": "DROP",
+      "rate_kbps": null,
+      "enabled": false,
+      "label": "Example: block V07 flood"
+    },
+    {
+      "id": "rule-1",
+      "priority": 900,
+      "source": "V07",
+      "traffic": "UDP_FLOOD",
+      "rsu": "*",
+      "action": "DROP",
+      "rate_kbps": null,
+      "enabled": true,
+      "label": "Study: known attacker flood class"
+    }
+  ],
+  "boundary_states": {
+    "baseline": {
+      "m2": "DISABLED",
+      "m3": "DISABLED",
+      "reputation": 1.0
+    },
+    "attack": {
+      "m2": "DISABLED",
+      "m3": "DISABLED",
+      "reputation": 1.0
+    },
+    "recovery": {
+      "m2": "DISABLED",
+      "m3": "DISABLED",
+      "reputation": 1.0
+    }
+  },
+  "offered_packet_sha256": "dd6f1b79c39cc54d94f2e98da8e93557300bf14f72c8b59ebc2af904d842c79a",
+  "mobility_sha256": "054c0ca1767560322b9f0231290e7a6974d6ce2ded9fa5581c11f1ad13706ab2",
+  "counts": {
+    "baseline": {
+      "benign": {
+        "generated": 567,
+        "received": 561,
+        "dropped": 6,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 149220,
+        "received_bytes": 147700,
+        "controller_generated": 214,
+        "controller_received": 212
+      },
+      "malicious_flood": {
+        "generated": 0,
+        "received": 0,
+        "dropped": 0,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 0,
+        "received_bytes": 0,
+        "controller_generated": 0,
+        "controller_received": 0
+      },
+      "malicious_safety": {
+        "generated": 0,
+        "received": 0,
+        "dropped": 0,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 0,
+        "received_bytes": 0,
+        "controller_generated": 0,
+        "controller_received": 0
+      }
+    },
+    "attack": {
+      "benign": {
+        "generated": 1215,
+        "received": 1193,
+        "dropped": 22,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 320940,
+        "received_bytes": 314220,
+        "controller_generated": 470,
+        "controller_received": 464
+      },
+      "malicious_flood": {
+        "generated": 6400,
+        "received": 0,
+        "dropped": 6400,
+        "rate_limited": 0,
+        "policy_dropped": 6400,
+        "generated_bytes": 6553600,
+        "received_bytes": 0,
+        "controller_generated": 0,
+        "controller_received": 0
+      },
+      "malicious_safety": {
+        "generated": 0,
+        "received": 0,
+        "dropped": 0,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 0,
+        "received_bytes": 0,
+        "controller_generated": 0,
+        "controller_received": 0
+      }
+    },
+    "recovery": {
+      "benign": {
+        "generated": 9085,
+        "received": 8991,
+        "dropped": 94,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 2383780,
+        "received_bytes": 2361060,
+        "controller_generated": 3354,
+        "controller_received": 3309
+      },
+      "malicious_flood": {
+        "generated": 0,
+        "received": 0,
+        "dropped": 0,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 0,
+        "received_bytes": 0,
+        "controller_generated": 0,
+        "controller_received": 0
+      },
+      "malicious_safety": {
+        "generated": 0,
+        "received": 0,
+        "dropped": 0,
+        "rate_limited": 0,
+        "policy_dropped": 0,
+        "generated_bytes": 0,
+        "received_bytes": 0,
+        "controller_generated": 0,
+        "controller_received": 0
+      }
+    }
+  },
+  "reasons": {
+    "baseline": {
+      "benign": {
+        "FORWARDED": 561,
+        "RADIO_LOSS": 6
+      },
+      "malicious_flood": {},
+      "malicious_safety": {}
+    },
+    "attack": {
+      "benign": {
+        "FORWARDED": 1193,
+        "RADIO_LOSS": 22
+      },
+      "malicious_flood": {
+        "M1_STATIC_DROP": 6400
+      },
+      "malicious_safety": {}
+    },
+    "recovery": {
+      "benign": {
+        "FORWARDED": 8991,
+        "RADIO_LOSS": 94
+      },
+      "malicious_flood": {},
+      "malicious_safety": {}
+    }
+  },
+  "metrics": {
+    "baseline": {
+      "legitimate_pdr_pct": {
+        "value": 98.94179894179894,
+        "explanation": null
+      },
+      "malicious_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_suppression_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_policy_drop_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "benign_policy_drop_pct": {
+        "value": 0.0,
+        "explanation": null
+      },
+      "udp_flood_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_safety_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_safety_controller_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "transmitted_packets": {
+        "value": null,
+        "explanation": "Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts."
+      },
+      "network_latency_ms": {
+        "value": null,
+        "explanation": "Engine delivery is instantaneous; no measured propagation/queue/receiver delay."
+      },
+      "m2_benign_source_alert_rate_pct": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m2_benign_source_restriction_rate_pct": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m3_benign_source_alert_rate_pct": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m3_benign_source_restriction_rate_pct": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m2_meter_duration_s": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m2_block_duration_s": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m3_meter_duration_s": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      }
+    },
+    "attack": {
+      "legitimate_pdr_pct": {
+        "value": 98.18930041152264,
+        "explanation": null
+      },
+      "malicious_delivery_pct": {
+        "value": 0.0,
+        "explanation": null
+      },
+      "malicious_suppression_pct": {
+        "value": 100.0,
+        "explanation": null
+      },
+      "malicious_policy_drop_pct": {
+        "value": 100.0,
+        "explanation": null
+      },
+      "benign_policy_drop_pct": {
+        "value": 0.0,
+        "explanation": null
+      },
+      "udp_flood_delivery_pct": {
+        "value": 0.0,
+        "explanation": null
+      },
+      "malicious_safety_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_safety_controller_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "transmitted_packets": {
+        "value": null,
+        "explanation": "Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts."
+      },
+      "network_latency_ms": {
+        "value": null,
+        "explanation": "Engine delivery is instantaneous; no measured propagation/queue/receiver delay."
+      },
+      "m2_benign_source_alert_rate_pct": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m2_benign_source_restriction_rate_pct": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m3_benign_source_alert_rate_pct": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m3_benign_source_restriction_rate_pct": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m2_meter_duration_s": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m2_block_duration_s": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m3_meter_duration_s": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m1_detection_delay_s": {
+        "value": null,
+        "explanation": "M1 is a preconfigured static rule; it does not detect attacks."
+      },
+      "m2_detection_delay_s": {
+        "value": null,
+        "explanation": "M2 disabled."
+      },
+      "m3_detection_delay_s": {
+        "value": null,
+        "explanation": "M3 disabled."
+      },
+      "m1_first_malicious_drop_delay_s": {
+        "value": 0.09999999999999964,
+        "explanation": null
+      },
+      "m2_first_malicious_drop_delay_s": {
+        "value": null,
+        "explanation": "No malicious packet drop attributed to this policy."
+      },
+      "m3_first_malicious_drop_delay_s": {
+        "value": null,
+        "explanation": "No malicious packet drop attributed to this policy."
+      }
+    },
+    "recovery": {
+      "legitimate_pdr_pct": {
+        "value": 98.96532746285085,
+        "explanation": null
+      },
+      "malicious_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_suppression_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_policy_drop_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "benign_policy_drop_pct": {
+        "value": 0.0,
+        "explanation": null
+      },
+      "udp_flood_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_safety_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "malicious_safety_controller_delivery_pct": {
+        "value": null,
+        "explanation": "No generated packets in this class/window."
+      },
+      "transmitted_packets": {
+        "value": null,
+        "explanation": "Engine has no independent MAC/link transmission stage; generated means endpoint forwarding attempts."
+      },
+      "network_latency_ms": {
+        "value": null,
+        "explanation": "Engine delivery is instantaneous; no measured propagation/queue/receiver delay."
+      },
+      "m2_benign_source_alert_rate_pct": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m2_benign_source_restriction_rate_pct": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m3_benign_source_alert_rate_pct": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m3_benign_source_restriction_rate_pct": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m2_meter_duration_s": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m2_block_duration_s": {
+        "value": null,
+        "explanation": "M2 disabled in this profile."
+      },
+      "m3_meter_duration_s": {
+        "value": null,
+        "explanation": "M3 disabled in this profile."
+      },
+      "m2_recovery_delay_s": {
+        "value": null,
+        "explanation": "No corresponding attacker restriction was observed during attack."
+      },
+      "m3_meter_recovery_delay_s": {
+        "value": null,
+        "explanation": "No corresponding attacker restriction was observed during attack."
+      },
+      "m3_reputation_recovery_delay_s": {
+        "value": null,
+        "explanation": "No corresponding attacker restriction was observed during attack."
+      },
+      "legitimate_throughput_recovery_s": {
+        "value": null,
+        "explanation": "Not inferred from healthy legitimate PDR. Moving connectivity changes capacity; no stationary throughput restoration criterion is defined. Policy restoration is measured separately."
+      },
+      "m1_rule_removal_delay_s": {
+        "value": null,
+        "explanation": "Static rule remains configured throughout; no rule-removal recovery is scheduled."
+      }
+    }
+  },
+  "counter_audit": {
+    "status": "PASS",
+    "ledger_generated": 17267,
+    "legacy_non_flood_generated": 10867,
+    "semantic_benign_generated": 10867,
+    "malicious_safety_counted_as_non_flood_by_dashboard": 0,
+    "semantic_benign_received": 10745,
+    "malicious_safety_received_counted_as_non_flood_by_dashboard": 0
+  },
+  "events": [
+    {
+      "id": 0,
+      "time": 0.0,
+      "kind": "SYSTEM",
+      "message": "Unified SDN-VANET simulator ready",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 1,
+      "time": 0.0,
+      "kind": "SYSTEM",
+      "message": "12 vehicles online, 3 roadside units available",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 2,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V01: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 3,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V02: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 4,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V03: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 5,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V04: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 6,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V05: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 7,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V06: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 8,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V07: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 9,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V08: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 10,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V09: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 11,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V10: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 12,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V11: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 13,
+      "time": 0.0,
+      "kind": "M2 \u00b7 RECOVERY",
+      "message": "V12: M2 disabled",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 14,
+      "time": 0.0,
+      "kind": "POLICY",
+      "message": "Controller setting m1_enabled = True",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 15,
+      "time": 0.0,
+      "kind": "POLICY",
+      "message": "Controller setting m2_enabled = False",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 16,
+      "time": 0.0,
+      "kind": "POLICY",
+      "message": "Controller setting m3_enabled = False",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 17,
+      "time": 0.0,
+      "kind": "M1 \u00b7 RULE",
+      "message": "Enabled: Study: known attacker flood class (DROP)",
+      "level": "warning",
+      "phase": "baseline"
+    },
+    {
+      "id": 18,
+      "time": 0.0,
+      "kind": "SCENARIO",
+      "message": "Normal traffic restored; outstanding dynamic policies recover by policy",
+      "level": "success",
+      "phase": "baseline"
+    },
+    {
+      "id": 3119,
+      "time": 3.1,
+      "kind": "RADIO",
+      "message": "V04: outside RSU coverage",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 4520,
+      "time": 4.5,
+      "kind": "RADIO",
+      "message": "V09: outside RSU coverage",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 5921,
+      "time": 5.9,
+      "kind": "HANDOVER",
+      "message": "V03: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 6322,
+      "time": 6.3,
+      "kind": "HANDOVER",
+      "message": "V05: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "baseline"
+    },
+    {
+      "id": 10023,
+      "time": 10.0,
+      "kind": "SCENARIO",
+      "message": "UDP flood started: V07 \u2192 V02",
+      "level": "danger",
+      "phase": "attack"
+    },
+    {
+      "id": 12124,
+      "time": 12.1,
+      "kind": "HANDOVER",
+      "message": "V02: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "attack"
+    },
+    {
+      "id": 12125,
+      "time": 12.1,
+      "kind": "RADIO",
+      "message": "V04: connected to RSU-3",
+      "level": "info",
+      "phase": "attack"
+    },
+    {
+      "id": 13526,
+      "time": 13.5,
+      "kind": "RADIO",
+      "message": "V09: connected to RSU-1",
+      "level": "info",
+      "phase": "attack"
+    },
+    {
+      "id": 19227,
+      "time": 19.2,
+      "kind": "HANDOVER",
+      "message": "V01: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "attack"
+    },
+    {
+      "id": 21128,
+      "time": 21.1,
+      "kind": "HANDOVER",
+      "message": "V05: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "attack"
+    },
+    {
+      "id": 22929,
+      "time": 22.9,
+      "kind": "HANDOVER",
+      "message": "V06: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "attack"
+    },
+    {
+      "id": 30030,
+      "time": 30.0,
+      "kind": "SCENARIO",
+      "message": "Normal traffic restored; outstanding dynamic policies recover by policy",
+      "level": "success",
+      "phase": "recovery"
+    },
+    {
+      "id": 35231,
+      "time": 35.2,
+      "kind": "HANDOVER",
+      "message": "V11: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 36832,
+      "time": 36.8,
+      "kind": "HANDOVER",
+      "message": "V10: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 39533,
+      "time": 39.5,
+      "kind": "RADIO",
+      "message": "V07: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 42734,
+      "time": 42.7,
+      "kind": "HANDOVER",
+      "message": "V12: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 42935,
+      "time": 42.9,
+      "kind": "RADIO",
+      "message": "V04: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 45336,
+      "time": 45.3,
+      "kind": "HANDOVER",
+      "message": "V09: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 51637,
+      "time": 51.6,
+      "kind": "HANDOVER",
+      "message": "V08: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 52838,
+      "time": 52.8,
+      "kind": "RADIO",
+      "message": "V04: connected to RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 53339,
+      "time": 53.3,
+      "kind": "RADIO",
+      "message": "V07: connected to RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 54440,
+      "time": 54.4,
+      "kind": "HANDOVER",
+      "message": "V03: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 55441,
+      "time": 55.4,
+      "kind": "HANDOVER",
+      "message": "V02: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 56342,
+      "time": 56.3,
+      "kind": "HANDOVER",
+      "message": "V06: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 59943,
+      "time": 59.9,
+      "kind": "RADIO",
+      "message": "V01: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 63744,
+      "time": 63.7,
+      "kind": "HANDOVER",
+      "message": "V08: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 65345,
+      "time": 65.3,
+      "kind": "HANDOVER",
+      "message": "V02: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 70646,
+      "time": 70.6,
+      "kind": "RADIO",
+      "message": "V01: connected to RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 76947,
+      "time": 76.9,
+      "kind": "RADIO",
+      "message": "V09: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 80248,
+      "time": 80.2,
+      "kind": "HANDOVER",
+      "message": "V11: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 83149,
+      "time": 83.1,
+      "kind": "HANDOVER",
+      "message": "V05: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 83750,
+      "time": 83.7,
+      "kind": "HANDOVER",
+      "message": "V10: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 85151,
+      "time": 85.1,
+      "kind": "RADIO",
+      "message": "V09: connected to RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 87552,
+      "time": 87.5,
+      "kind": "HANDOVER",
+      "message": "V04: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 89253,
+      "time": 89.2,
+      "kind": "RADIO",
+      "message": "V12: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 90554,
+      "time": 90.5,
+      "kind": "HANDOVER",
+      "message": "V11: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 94255,
+      "time": 94.2,
+      "kind": "HANDOVER",
+      "message": "V03: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 96756,
+      "time": 96.7,
+      "kind": "HANDOVER",
+      "message": "V06: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 100857,
+      "time": 100.8,
+      "kind": "RADIO",
+      "message": "V07: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 101358,
+      "time": 101.3,
+      "kind": "RADIO",
+      "message": "V12: connected to RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 106959,
+      "time": 106.9,
+      "kind": "HANDOVER",
+      "message": "V02: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 107160,
+      "time": 107.1,
+      "kind": "RADIO",
+      "message": "V01: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 113461,
+      "time": 113.4,
+      "kind": "RADIO",
+      "message": "V09: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 114662,
+      "time": 114.6,
+      "kind": "HANDOVER",
+      "message": "V08: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 116063,
+      "time": 116.0,
+      "kind": "RADIO",
+      "message": "V07: connected to RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 118864,
+      "time": 118.8,
+      "kind": "RADIO",
+      "message": "V01: connected to RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 121965,
+      "time": 121.9,
+      "kind": "RADIO",
+      "message": "V04: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 122266,
+      "time": 122.2,
+      "kind": "HANDOVER",
+      "message": "V10: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 122467,
+      "time": 122.4,
+      "kind": "RADIO",
+      "message": "V09: connected to RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 129968,
+      "time": 129.9,
+      "kind": "HANDOVER",
+      "message": "V06: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 130869,
+      "time": 130.8,
+      "kind": "RADIO",
+      "message": "V04: connected to RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 133670,
+      "time": 133.6,
+      "kind": "HANDOVER",
+      "message": "V11: RSU-2 \u2192 RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 134371,
+      "time": 134.3,
+      "kind": "HANDOVER",
+      "message": "V03: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 143072,
+      "time": 143.0,
+      "kind": "RADIO",
+      "message": "V12: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 147673,
+      "time": 147.6,
+      "kind": "HANDOVER",
+      "message": "V05: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 150374,
+      "time": 150.3,
+      "kind": "HANDOVER",
+      "message": "V02: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 154275,
+      "time": 154.2,
+      "kind": "HANDOVER",
+      "message": "V09: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 156376,
+      "time": 156.3,
+      "kind": "RADIO",
+      "message": "V12: connected to RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 159977,
+      "time": 159.9,
+      "kind": "HANDOVER",
+      "message": "V01: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 160278,
+      "time": 160.2,
+      "kind": "HANDOVER",
+      "message": "V02: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 161179,
+      "time": 161.1,
+      "kind": "HANDOVER",
+      "message": "V10: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 161780,
+      "time": 161.7,
+      "kind": "RADIO",
+      "message": "V04: outside RSU coverage",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 162481,
+      "time": 162.4,
+      "kind": "HANDOVER",
+      "message": "V05: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 163382,
+      "time": 163.3,
+      "kind": "HANDOVER",
+      "message": "V06: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 167683,
+      "time": 167.6,
+      "kind": "HANDOVER",
+      "message": "V08: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 169484,
+      "time": 169.4,
+      "kind": "HANDOVER",
+      "message": "V07: RSU-1 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 171585,
+      "time": 171.5,
+      "kind": "RADIO",
+      "message": "V04: connected to RSU-1",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 178686,
+      "time": 178.6,
+      "kind": "HANDOVER",
+      "message": "V11: RSU-1 \u2192 RSU-3",
+      "level": "info",
+      "phase": "recovery"
+    },
+    {
+      "id": 179887,
+      "time": 179.8,
+      "kind": "HANDOVER",
+      "message": "V08: RSU-3 \u2192 RSU-2",
+      "level": "info",
+      "phase": "recovery"
+    }
+  ],
+  "decisions": [],
+  "transitions": [],
+  "handovers": 41
+}

@@ -1,0 +1,58 @@
+# 2026-10-28T09:35:25+05:30
+# ovs-vsctl list controller
+_uuid               : 7b6cb8b4-f9d2-4edd-bfb5-92a95c05fde4
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {last_error="Connection refused", sec_since_connect="1845", sec_since_disconnect="1858", state=ACTIVE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : 039eef49-5759-44e5-811d-342d81fa40c5
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {last_error="Connection refused", sec_since_connect="1845", sec_since_disconnect="1858", state=ACTIVE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : 8fa0df3b-0cdf-4bad-9fcb-5574ca3baa41
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {last_error="Connection refused", sec_since_connect="1845", sec_since_disconnect="1858", state=ACTIVE}
+target              : "tcp:127.0.0.1:6653"
+type                : []

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "matched_scenario_seed_groups": 15,
+  "checks": [
+    "all offered packet identities/times/sizes/ground-truth labels",
+    "all 0.1-second vehicle positions and RSU associations"
+  ]
+}

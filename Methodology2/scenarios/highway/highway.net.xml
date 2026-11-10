@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-10-28 01:16:32 by Eclipse SUMO netconvert Version 1.12.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="/home/ev/MarsVanet-main_MED2%20(1)/MarsVanet-main/Methodology2/scenarios/highway/highway.nod.xml"/>
+        <edge-files value="/home/ev/MarsVanet-main_MED2%20(1)/MarsVanet-main/Methodology2/scenarios/highway/highway.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/ev/MarsVanet-main_MED2%20(1)/MarsVanet-main/Methodology2/scenarios/highway/highway.net.xml"/>
+    </output>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,2000.00,0.00" origBoundary="0.00,0.00,2000.00,0.00" projParameter="!"/>
+
+    <edge id="h_road" from="h0" to="h1" priority="1">
+        <lane id="h_road_0" index="0" speed="33.33" length="2000.00" shape="0.00,-8.00 2000.00,-8.00"/>
+        <lane id="h_road_1" index="1" speed="33.33" length="2000.00" shape="0.00,-4.80 2000.00,-4.80"/>
+        <lane id="h_road_2" index="2" speed="33.33" length="2000.00" shape="0.00,-1.60 2000.00,-1.60"/>
+    </edge>
+
+    <junction id="h0" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-9.60"/>
+    <junction id="h1" type="dead_end" x="2000.00" y="0.00" incLanes="h_road_0 h_road_1 h_road_2" intLanes="" shape="2000.00,-9.60 2000.00,0.00"/>
+
+</net>

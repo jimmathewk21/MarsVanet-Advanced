@@ -1,0 +1,4 @@
+# 2026-10-28T00:35:00+05:30
+# ovs-vsctl list-ports ap2
+ap2-eth2
+ap2-wlan1

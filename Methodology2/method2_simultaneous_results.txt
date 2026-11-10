@@ -1,0 +1,275 @@
+Methodology 2: Simultaneous UDP and ICMP Test
+
+UDP duration: 30 seconds
+UDP target rate: 2 Mbps
+UDP sender bandwidth: 2.10 Mbps
+UDP receiver bandwidth: 2.10 Mbps
+UDP datagrams lost: 0/5353
+UDP jitter: 3.059 ms
+UDP out-of-order datagrams: 13
+
+ICMP packets transmitted: 20
+ICMP packets received: 20
+ICMP packet loss: 0%
+ICMP average latency during UDP: 13.620 ms
+ICMP maximum latency during UDP: 53.531 ms
+
+Previous ICMP average latency: 4.753 ms
+Interpretation: ICMP remained reachable during UDP traffic. Higher latency was observed, but further repeated trials are needed to establish a reliable effect.
+
+Fresh normal ICMP comparison (without UDP client):
+Packets transmitted: 20
+Packets received: 20
+Packet loss: 0%
+Average latency: 17.850 ms
+Minimum latency: 3.769 ms
+Maximum latency: 38.979 ms
+Latency variation (mdev): 12.098 ms
+
+Normal ICMP Trial 2 (without UDP client):
+Packets transmitted: 20
+Packets received: 20
+Packet loss: 0%
+Average latency: 10.293 ms
+Minimum latency: 2.707 ms
+Maximum latency: 61.303 ms
+Latency variation (mdev): 12.936 ms
+
+Normal ICMP Trial 3 (without UDP client):
+Packets transmitted: 20
+Packets received: 20
+Packet loss: 0%
+Average latency: 14.719 ms
+Minimum latency: 3.741 ms
+Maximum latency: 46.814 ms
+Latency variation (mdev): 13.988 ms
+
+Three-trial normal baseline summary:
+Trial 1 average latency: 17.850 ms
+Trial 2 average latency: 10.293 ms
+Trial 3 average latency: 14.719 ms
+Three-trial mean latency: 14.287 ms
+
+Comparison:
+Simultaneous UDP + ICMP average latency: 13.620 ms
+Interpretation: The UDP test latency was approximately 4.7% lower than the three-trial normal mean. These measurements do not establish that UDP increased latency; more repeated paired trials are needed.
+
+Static UDP Defense Verification
+
+Defense rule: IPv4 UDP from 10.0.0.3 -> DROP
+Switch: ap2
+Earlier drop counter: 1987 packets, 3004344 bytes
+Later drop counter: 3082 packets, 4659984 bytes
+Counter increase between checks: 1095 packets, 1655640 bytes
+
+UDP test:
+Target rate: 2 Mbps
+Sender-reported rate: 2.10 Mbps
+Duration: 5 seconds
+Client warning: final datagram acknowledgment not received
+
+Legitimate ICMP connectivity check:
+Packets transmitted: 10
+Packets received: 10
+Packet loss: 0%
+Average latency: 5.593 ms
+Maximum latency: 13.300 ms
+
+Conclusion: The ap2 drop counter confirms matching UDP packets were dropped, while the ICMP connectivity check succeeded. Counter values are cumulative since rule installation, not isolated to one test.
+
+Legitimate UDP Test During Static Defense
+
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Target UDP rate: 1 Mbps
+Sender-reported rate: 1.05 Mbps
+Datagrams sent: 450
+Receiver report: Received
+Receiver loss statistics: Not captured in the available output
+
+ap2 defense counter before legitimate UDP test:
+Packets dropped: 3082
+Bytes dropped: 4659984
+
+ap2 defense counter after legitimate UDP test:
+Packets dropped: 3082
+Bytes dropped: 4659984
+
+Interpretation: The legitimate UDP test received a server report, and the rule's drop counter for UDP from 10.0.0.3 did not increase. This supports selective source-based filtering, but does not establish that all legitimate traffic is preserved.
+
+Legitimate UDP Test - Complete Receiver Statistics
+
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Test duration: 5 seconds
+Target rate: 1 Mbps
+Sender bandwidth: 1.05 Mbps
+Receiver bandwidth: 1.05 Mbps
+Jitter: 2.235 ms
+Datagrams sent: 450
+Receiver-reported lost/total datagrams: 0/449 (0%)
+
+Interpretation: The receiver reported zero lost datagrams among 449 datagrams counted in its report. The sender reported 450 datagrams sent. The ap2 drop counter for UDP from 10.0.0.3 remained unchanged during the earlier legitimate UDP test.
+
+UDP Packet Capture Burst Analysis
+
+Capture: method2_dos_fresh.pcap
+Filter: UDP from 10.0.0.3 to 10.0.0.2
+Method: Consecutive packets were grouped into bursts when the gap between packets was no greater than 2 seconds.
+
+Burst 1: 3570 packets, 19.961 seconds, 178.85 packets/second
+Burst 2: 5354 packets, 30.029 seconds, 178.29 packets/second
+Burst 3: 5353 packets, 30.007 seconds, 178.39 packets/second
+Burst 4: 1987 packets, 13.767 seconds, 144.33 packets/second
+Burst 5: 1094 packets, 8.935 seconds, 122.44 packets/second
+
+Interpretation: The capture contains five distinct UDP traffic bursts separated by gaps longer than 2 seconds. The first three bursts have measured rates near 178 packets/second. The bursts have not yet been individually mapped to test labels, so these measurements alone do not establish which burst represents the intended attack or defense test.
+
+
+Controlled Static Defense Counter Test
+
+Switch: ap2
+Rule: IPv4 UDP from 10.0.0.3 -> DROP
+UDP destination: 10.0.0.2
+Configured test duration: 5 seconds
+Configured sender rate: 2 Mbps
+Sender-reported bandwidth: 2.10 Mbps
+Datagrams reported sent: 896
+Client warning: final datagram acknowledgment not received
+
+Drop counter before test interval:
+Packets: 3082
+Bytes: 4659984
+
+Drop counter after test interval:
+Packets: 4177
+Bytes: 6315624
+
+Counter increase between readings:
+Packets: 1095
+Bytes: 1655640
+
+Interpretation: The matching UDP drop counter increased while the UDP sender was active. The readings are cumulative and were taken around the test rather than at exact test boundaries, so the increase must not be treated as an exact count of packets dropped during the 5-second test.
+
+Legitimate UDP Connectivity Test After Controlled Defense Test
+
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Test duration: 5.0136 seconds
+Target rate: 1 Mbps
+Sender bandwidth: 1.05 Mbps
+Receiver bandwidth: 1.05 Mbps
+Receiver-reported datagram loss: 0/449 (0%)
+Receiver jitter: 1.867 ms
+
+Interpretation: Legitimate UDP traffic from 10.0.0.1 to 10.0.0.2 was received with zero reported loss among the 449 datagrams counted by the receiver. Together with the drop-counter increase for the 10.0.0.3 rule, this supports selective source-based filtering in the tested topology.
+
+STATIC DEFENSE VERIFICATION - FRESH TESTS
+-----------------------------------------
+Test 1: UDP from sta3 (10.0.0.3) to sta2 (10.0.0.2)
+Duration: 5 seconds
+Configured sending rate: 2 Mbps
+Datagrams sent: 896
+OpenFlow rule: priority=100, udp, nw_src=10.0.0.3, actions=drop
+Cumulative matching counter after test: 5272 packets, 7971264 bytes
+Result: Drop rule matched the source UDP traffic.
+
+Test 2: Legitimate UDP from sta1 (10.0.0.1) to sta2 (10.0.0.2)
+Duration: approximately 5 seconds
+Configured sending rate: 1 Mbps
+Datagrams sent: 450
+Receiver report: 449 datagrams, 0/449 lost (0%)
+Measured bandwidth: 1.05 Mbps
+Measured jitter: 2.866 ms
+Result: Legitimate UDP flow succeeded while the static filter was active.
+
+Limitation: These tests verify source-based UDP filtering, not mobility-aware
+detection or trust-based progressive mitigation. The drop counter is cumulative.
+
+ICMP CONNECTIVITY VERIFICATION - DEFENSE ENABLED
+------------------------------------------------
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Packets transmitted: 10
+Packets received: 10
+Packet loss: 0%
+Minimum RTT: 2.762 ms
+Average RTT: 9.834 ms
+Maximum RTT: 55.265 ms
+UDP source-filter rule on ap2: active
+Cumulative UDP rule counter: 5272 packets, 7971264 bytes
+Result: ICMP connectivity succeeded while the UDP filtering rule was present.
+
+BASELINE VS STATIC DEFENSE COMPARISON
+=====================================
+
+1. BASELINE UDP TEST (DEFENSE DISABLED)
+Duration: 20 seconds
+Configured sending rate: 2 Mbps
+Sender bandwidth: 2.10 Mbps
+Receiver bandwidth: 2.11 Mbps
+Datagrams lost: 0/3570
+Jitter: 1.004 ms
+Out-of-order datagrams: 37
+
+2. TARGETED UDP TEST (DEFENSE ENABLED)
+Source: sta3 (10.0.0.3)
+Destination: sta2 (10.0.0.2)
+Duration: 5 seconds
+Configured sending rate: 2 Mbps
+Datagrams sent: 896
+Final datagram acknowledgement warning: observed
+OpenFlow drop rule counter after test: 5272 packets
+OpenFlow drop rule bytes after test: 7971264
+Rule action: drop
+
+3. LEGITIMATE UDP TEST (DEFENSE ENABLED)
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Duration: approximately 5 seconds
+Datagrams sent: 450
+Datagrams received: 449
+Reported packet loss: 0/449 (0%)
+Measured bandwidth: 1.05 Mbps
+Jitter: 2.866 ms
+
+4. ICMP TEST (DEFENSE ENABLED)
+Source: sta1 (10.0.0.1)
+Destination: sta2 (10.0.0.2)
+Packets transmitted: 10
+Packets received: 10
+Packet loss: 0%
+Average RTT: 9.834 ms
+Minimum RTT: 2.762 ms
+Maximum RTT: 55.265 ms
+
+INTERPRETATION
+--------------
+The baseline UDP test delivered traffic to the receiver.
+With static filtering enabled, UDP packets matching source 10.0.0.3
+were processed by the OpenFlow drop rule.
+Separate UDP and ICMP tests from sta1 succeeded with the rule present.
+
+The tests used different durations and were not perfectly matched trials.
+The drop counter is cumulative, not the count for one test.
+This demonstrates static source-based filtering only. It does not yet
+demonstrate mobility-aware detection or trust-based progressive mitigation.
+
+MATCHED 10-SECOND UDP BASELINE
+-----------------------------
+Defense rule: temporarily removed from ap2 for this isolated lab test
+Source: sta3 (10.0.0.3)
+Destination: sta2 (10.0.0.2)
+Duration: approximately 10 seconds
+Configured sending rate: 2 Mbps
+Measured sender bandwidth: 2.10 Mbps
+Datagrams sent: 1787
+Final datagram acknowledgement warning: observed
+Receiver delivery count: not confirmed by this client output
+
+DEFENSE RESTORATION
+-------------------
+Restored on ap2:
+priority=100,udp,nw_src=10.0.0.3 actions=drop
+Counter immediately after restoration: 0 packets, 0 bytes
+Result: Rule is installed; verify matching counter again after a test.

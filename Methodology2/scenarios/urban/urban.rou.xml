@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Urban demand: high vehicle rate => denser traffic, and the signal at u1
+     produces stop/go, lowering average speed. This is the "dense/slow"
+     context that lowers the mobility-aware detection threshold. -->
+<routes>
+    <vType id="urban_car" accel="2.6" decel="4.5" sigma="0.5" length="5"
+           minGap="2.5" maxSpeed="13.89"/>
+
+    <route id="urban_route" edges="u_seg1 u_seg2"/>
+
+    <!-- 1200 veh/h for 120 s of injection. -->
+    <flow id="urban_vehicles" type="urban_car" route="urban_route"
+          begin="0" end="120" vehsPerHour="1200" departSpeed="max"/>
+</routes>

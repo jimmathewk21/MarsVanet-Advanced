@@ -1,0 +1,5 @@
+# 2026-10-28T09:06:36+05:30
+# ovs-ofctl -O OpenFlow13 meter-stats ap2
+OFPST_METER reply (OF1.3) (xid=0x2):
+meter:103 flow_count:0 packet_in_count:10728 byte_in_count:8285176 duration:758.654s bands:
+0: packet_count:4515 byte_count:5607630

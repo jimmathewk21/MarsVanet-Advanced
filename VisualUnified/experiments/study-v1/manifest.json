@@ -1,0 +1,102 @@
+{
+  "study_type": "SIMULATION_ONLY",
+  "spec": {
+    "seeds": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scenarios": [
+      "normal",
+      "flood",
+      "combined"
+    ],
+    "baseline_seconds": 10,
+    "attack_seconds": 20,
+    "recovery_seconds": 150,
+    "step_seconds": 0.1,
+    "attacker": "V07",
+    "victim": "V02"
+  },
+  "profiles": {
+    "no_defense": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "m1_only": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "m2_only": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "m3_only": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "unified_dynamic": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "unified_static": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "engine_defaults": {
+    "base_pps": 120,
+    "flood_pps": 320,
+    "stage2_after_sec": 10.0,
+    "block_duration_sec": 30.0,
+    "m2_meter_kbps": 500,
+    "m2_window_sec": 5.0,
+    "m2_meter_lifetime_sec": 15.0,
+    "m2_reset_sec": 30.0,
+    "dense_pps": 90,
+    "sparse_pps": 150,
+    "handover_floor_pps": 150,
+    "m2_monitored_rsu": "*",
+    "radio_range": 185,
+    "rsu_range": 330,
+    "rsu_backhaul_mbps": 2.0,
+    "max_reported_speed_kmh": 198,
+    "max_acceleration_mps2": 8.0,
+    "position_tolerance_m": 10.0,
+    "reputation_penalty": 0.2,
+    "recovery_every": 5,
+    "recovery_gain": 0.02,
+    "loss_probability": 0.01,
+    "m1_enabled": true,
+    "m2_enabled": true,
+    "m3_enabled": true
+  },
+  "sources_sha256": {
+    "VisualUnified/run_experiments.py": "2ee2fd93e4e00e8b895f870315686df00ef284b35e11730590d9852d07975f27",
+    "VisualUnified/engine.py": "cbb5f296b75ddcef11ff908feec525ff9c2fa8e40b963e4ffee8d8eded843e31",
+    "VisualUnified/methodology.py": "a2a45b9e0b034b0a391ac5da4cba66a4f556a3a15da32d745cc8d5b733aef806",
+    "benchmark/core.py": "32d045a6a57c70565cd6b667ff8128080089ead12ae8f7019c99d895e9adeb12",
+    "Methodology2/scripts/mobility_detector.py": "3c599b7ec18787bd0e6fc9b339c7ef4562730342d7336ff206828ee997d0478d",
+    "Methodology2/scripts/med2_config.py": "a4d9b75918dbdbdcd193a76b64d79aa2d8d9470ff2cd5321baa41eae60abc964",
+    "Methodology3/message_consistency.py": "639934aeff4f5af19ca2b753dfd3eae0b99b9677b63417694ef730e3bcf1e01a",
+    "Methodology3/reputation_engine.py": "231d0e3d40f39b93c71304fac4ef48cd54a7420a90e2305b47866ee9772dcd43",
+    "Methodology3/safety_messages.py": "fe383254f2187eb0f1617212757d76e9cfe5587ac59c5a20183fdcbaca298d53"
+  },
+  "python": "3.12.7 (main, Nov 22 2024, 20:28:41)  [GCC UCRT 14.2.0 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "executed_utc": "2026-11-10T11:42:10.727440+00:00"
+}
